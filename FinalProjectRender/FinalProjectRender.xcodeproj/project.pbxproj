@@ -16,6 +16,7 @@
 		43DB822C226C0BCA007A5567 /* FinalProjectRenderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43DB822B226C0BCA007A5567 /* FinalProjectRenderTests.swift */; };
 		43DB8237226C0BCA007A5567 /* FinalProjectRenderUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43DB8236226C0BCA007A5567 /* FinalProjectRenderUITests.swift */; };
 		43DB8247226C0C4E007A5567 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 43DB8246226C0C4E007A5567 /* GoogleService-Info.plist */; };
+		43DB826D226D2AC3007A5567 /* Model in Resources */ = {isa = PBXBuildFile; fileRef = 43DB826C226D2AC2007A5567 /* Model */; };
 		B58267E0D3423E13EBCB3D4D /* Pods_FinalProjectRenderTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B3DFD8A22E09C0F8584DA24 /* Pods_FinalProjectRenderTests.framework */; };
 		C63FBEF41ED11474323DAE48 /* Pods_FinalProjectRenderUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53207F817C8448B0F2D21FA4 /* Pods_FinalProjectRenderUITests.framework */; };
 /* End PBXBuildFile section */
@@ -52,6 +53,7 @@
 		43DB8236226C0BCA007A5567 /* FinalProjectRenderUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinalProjectRenderUITests.swift; sourceTree = "<group>"; };
 		43DB8238226C0BCA007A5567 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		43DB8246226C0C4E007A5567 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		43DB826C226D2AC2007A5567 /* Model */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Model; sourceTree = "<group>"; };
 		53207F817C8448B0F2D21FA4 /* Pods_FinalProjectRenderUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FinalProjectRenderUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5BCCC2B5962B3C4D15E87DFA /* Pods-FinalProjectRenderUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FinalProjectRenderUITests.release.xcconfig"; path = "Target Support Files/Pods-FinalProjectRenderUITests/Pods-FinalProjectRenderUITests.release.xcconfig"; sourceTree = "<group>"; };
 		643066AEF5BDAD29957C841D /* Pods-FinalProjectRenderTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FinalProjectRenderTests.release.xcconfig"; path = "Target Support Files/Pods-FinalProjectRenderTests/Pods-FinalProjectRenderTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -127,6 +129,7 @@
 		43DB8215226C0BC9007A5567 /* FinalProjectRender */ = {
 			isa = PBXGroup;
 			children = (
+				43DB826C226D2AC2007A5567 /* Model */,
 				43DB8246226C0C4E007A5567 /* GoogleService-Info.plist */,
 				43DB8216226C0BC9007A5567 /* AppDelegate.swift */,
 				43DB8218226C0BC9007A5567 /* ViewController.swift */,
@@ -284,6 +287,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				43DB826D226D2AC3007A5567 /* Model in Resources */,
 				43DB8221226C0BCA007A5567 /* LaunchScreen.storyboard in Resources */,
 				43DB8247226C0C4E007A5567 /* GoogleService-Info.plist in Resources */,
 				43DB821E226C0BCA007A5567 /* Assets.xcassets in Resources */,
