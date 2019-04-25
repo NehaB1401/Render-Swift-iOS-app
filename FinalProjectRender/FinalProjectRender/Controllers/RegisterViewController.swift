@@ -41,6 +41,12 @@ class RegisterViewController: UIViewController, UIPickerViewDataSource, UIPicker
         role = roles[row]
     }
     
+    func presentAlert(){
+        let alert = UIAlertController(title: "SUCCESS", message: "SUCCESSFULLY REGISTERED PROPERTY MANAGER!!", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+    }
+    
     var imagePicker = UIImagePickerController();
 
     @IBOutlet weak var firstNameTxt: UITextField!
@@ -155,7 +161,7 @@ class RegisterViewController: UIViewController, UIPickerViewDataSource, UIPicker
         self.address.latitude = Double(location.coordinate.latitude)
         self.address.longitude = Double(location.coordinate.longitude)
         self.buyer.address = self.address
-        
+        self.buyer.userId = UUID().uuidString;
         self.buyer.firstName = self.firstNameTxt.text
         self.buyer.lastName = self.lastNametxt.text
         self.buyer.itemList = []
@@ -181,11 +187,83 @@ class RegisterViewController: UIViewController, UIPickerViewDataSource, UIPicker
                 self.buyer.profileImage = "self.image.image!.pngData()! as Data";
             }
             self.buyer.saveToFirebase()
+            self.presentAlert()
+                    // 1. Upload the profile image to Firebase Storage
+                    
+            self.uploadProfileImage(self.image.image!) { url in
+                        
+                        if url != nil {
+                            let changeRequest = Auth.auth().currentUser?.createProfileChangeRequest()
+                            changeRequest?.displayName = userName
+                            changeRequest?.photoURL = url
+                            
+                            changeRequest?.commitChanges { error in
+                                if error == nil {
+                                    print("User display name changed!")
+                                    
+                                    self.saveProfile(username: userName, profileImageURL: url!) { success in
+                                        if success {
+                                            self.dismiss(animated: true, completion: nil)
+                                        }
+                                    }
+                                    
+                                } else {
+                                    print("Error: \(error!.localizedDescription)")
+                                }
+                            }
+                        } else {
+                            // Error unable to upload profile image
+                        }
+                        
+                    }
+                    
+            
             //self.buyer.saveImagetoFirebase()
         })
         }
         
     }
+    
+    func uploadProfileImage(_ image:UIImage, completion: @escaping ((_ url:URL?)->())) {
+        guard let uid = Auth.auth().currentUser?.uid else { return }
+        let storageRef = Storage.storage().reference().child("user/\(uid)")
+        
+        guard let imageData = image.pngData()! as Data? else { return }
+        
+        
+        let metaData = StorageMetadata()
+        metaData.contentType = "image/jpg"
+        
+        storageRef.putData(imageData, metadata: metaData) { metaData, error in
+            if error == nil, metaData != nil {
+                storageRef.downloadURL { (url, error) in
+                    guard let error = error else {
+                        var pathString = url?.absoluteString
+                        return
+                    }
+                }
+                // success!
+            } else {
+                // failed
+                completion(nil)
+            }
+        }
+    }
+    
+    func saveProfile(username:String, profileImageURL:URL, completion: @escaping ((_ success:Bool)->())) {
+        guard let uid = Auth.auth().currentUser?.uid else { return }
+        let databaseRef = Database.database().reference().child("users/profile/\(uid)")
+        
+        let userObject = [
+            "username": username,
+            "photoURL": profileImageURL.absoluteString
+            ] as [String:Any]
+        
+        databaseRef.setValue(userObject) { error, ref in
+            completion(error == nil)
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

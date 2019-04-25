@@ -36,6 +36,12 @@ extension String {
 }
 
 extension String {
+    var isDouble: Bool{
+        return (Double(self) != nil && Double(self)! > 0)
+    }
+}
+
+extension String {
     var isEmail: Bool {
         return Util.isValidEmail(email: self)
     }

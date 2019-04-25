@@ -7,15 +7,204 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseStorage
+import CoreLocation
 
 var i = 0{
     didSet{
         
     }
 }
-class ItemDetailViewController: UIViewController {
+class ItemDetailViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource,UIPickerViewDataSource, UIPickerViewDelegate  {
+      var loggedInUserId = ""
+     var itemList = [UIImage]();
+    let itemDetails = Item()
+    let address = Address()
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return itemList.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = imageCollection.dequeueReusableCell(withReuseIdentifier: "imageCell", for: indexPath) as? ImageCollectionViewCell
+        cell?.image.image = itemList[indexPath.row]
+        return cell!
+    }
+    var category = "Misc";
+    
+    var ref:DatabaseReference?
+    
+    let categories =  ["Electronics","Sports", "Home", "Kitchenware", "Fashion", "Vehicles", "Books", "Misc"];
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return categories[row]
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return categories.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        category = categories[row]
+    }
+    
+    func alert(_ message: String){
+        let alert = UIAlertController(title: "Alert", message: message, preferredStyle: .alert);
+        let OkAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+        alert.addAction(OkAction)
+        self.present(alert, animated: true, completion: nil)
+    }
+   
 
+    @IBOutlet weak var imageCollection: UICollectionView!
+    
+    @IBOutlet weak var titleTxt: UITextField!
+    
+    
+    @IBOutlet weak var descTxt: UITextView!
 
+    @IBOutlet weak var priceTxt: UITextField!
+    @IBAction func freeItem(_ sender: UISwitch) {
+    }
+    @IBOutlet weak var categoryScroll: UIPickerView!
+    @IBAction func addImage(_ sender: UIButton) {
+    }
+    
+    @IBOutlet weak var AddressLine1: UITextField!
+    @IBOutlet weak var cityTxt: UITextField!
+    @IBOutlet weak var stateTxt: UITextField!
+    @IBOutlet weak var zipTxt: UITextField!
+    @IBAction func postListing(_ sender: UIButton) {
+        if ((AddressLine1?.text?.isEmpty)! || (cityTxt?.text?.isEmpty)!
+            || (zipTxt?.text?.isEmpty)!) {
+            alert("Address values can not be empty!")
+            return
+        }
+        
+        if (!(priceTxt.text?.isDouble)!) {
+            alert("Invalid price")
+            return
+        }else if let number = Double(priceTxt.text!)
+        {
+            if((number < 0))
+            {
+                alert("Invalid price")
+                return
+            }
+            
+        }
+        
+        if (!(zipTxt.text?.isInt)!) {
+            alert("Invalid zip")
+            return
+        }else if let number = Int(zipTxt.text!)
+        {
+            if((number < 0) || (number>Int.max))
+            {
+                alert("Invalid zip")
+                return
+            }
+            
+        }
+        
+        let coor:String = "" + AddressLine1.text! + ", " + cityTxt.text! + ", " + stateTxt.text! + " " + zipTxt.text!
+        print(coor)
+        
+        let ref: DatabaseReference?
+        ref = Database.database().reference().child("users")
+        
+        let geoCoder = CLGeocoder()
+        geoCoder.geocodeAddressString(coor) { (placemarks, error) in
+            guard let placemarks = placemarks,let location = placemarks.first?.location
+                else {
+                    let alert = UIAlertController(title: "ALERT", message: "PLEASE ENTER A VALID ADDRESS!!", preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                    self.present(alert, animated: true, completion: nil)
+                    return
+            }
+            
+            
+            self.address.addressLine1 = self.AddressLine1.text ;
+            self.address.city = self.cityTxt.text
+            self.address.state = self.stateTxt.text
+            self.address.postalCode = Int(self.zipTxt.text!)
+            self.address.latitude = Double(location.coordinate.latitude)
+            self.address.longitude = Double(location.coordinate.longitude)
+            self.itemDetails.propertyAddress = self.address
+            if(!((self.titleTxt?.text?.isEmpty)!))
+            {
+                self.itemDetails.itemTitle = self.titleTxt.text;
+            }
+            if(!((self.descTxt?.text?.isEmpty)!))
+            {
+                self.itemDetails.description = self.descTxt.text;
+            }
+            if(!((self.priceTxt?.text?.isEmpty)!))
+            {
+                self.itemDetails.price = Double(self.priceTxt.text!);
+            }
+            self.itemDetails.itemCategory = Category(rawValue: self.category).map { $0.rawValue };
+            self.itemDetails.isSold = false;
+            self.itemDetails.itemBooked = false;
+            self.itemDetails.sellerName = self.loggedInUserId
+            self.itemDetails.itemId = UUID().uuidString;
+
+            print(location.coordinate.latitude)
+            print(location.coordinate.longitude)
+            var itemId : String =
+            userName = userName.replacingOccurrences(of: ".", with: ",")
+            ref?.child(userName).observeSingleEvent(of: .value, with: { (snapshot) in
+                
+                if(snapshot.hasChildren()){
+                    let alert = UIAlertController(title: "ALERT", message: "EMAIL ALREADY REGISTERED FOR RENDER USER!!", preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                    self.present(alert, animated: true, completion: nil)
+                    return
+                }
+                if self.itemDetails.profileImage == nil {
+                    self.itemDetails.profileImage = "self.image.image!.pngData()! as Data";
+                }
+                self.itemDetails.saveToFirebase()
+                self.presentAlert()
+                // 1. Upload the profile image to Firebase Storage
+                
+                self.uploadProfileImage(self.image.image!) { url in
+                    
+                    if url != nil {
+                        let changeRequest = Auth.auth().currentUser?.createProfileChangeRequest()
+                        changeRequest?.displayName = userName
+                        changeRequest?.photoURL = url
+                        
+                        changeRequest?.commitChanges { error in
+                            if error == nil {
+                                print("User display name changed!")
+                                
+                                self.saveProfile(username: userName, profileImageURL: url!) { success in
+                                    if success {
+                                        self.dismiss(animated: true, completion: nil)
+                                    }
+                                }
+                                
+                            } else {
+                                print("Error: \(error!.localizedDescription)")
+                            }
+                        }
+                    } else {
+                        // Error unable to upload profile image
+                    }
+                    
+                }
+                
+                
+                //self.itemDetails.saveImagetoFirebase()
+            })
+        }
+        
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -32,5 +221,95 @@ class ItemDetailViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    func getProperties(){
+        let session = URLSession.shared
+        let postEndpoint: String = "https://search.onboard-apis.com/propertyapi/v1.0.0/property/snapshot?latitude=\(String(describing: address.latitude!))&longitude=\(String(describing: address.longitude!))&radius=1"
+        print(postEndpoint)
+        let url = URL(string: postEndpoint)!
+        var request = URLRequest(url: url as URL)
+        
+        request.setValue("02a205de6f57ff300b669f187a7556e6", forHTTPHeaderField: "apikey")
+        request.setValue("application/json", forHTTPHeaderField: "Accept")
+        request.httpMethod = "GET"
+        
+        let task = session.dataTask(with: request) { (data, response, error) in
+            
+            guard error == nil else {
+                print("error calling POST on /todos/1")
+                print(error!)
+                return
+            }
+            
+            guard let responseData = data else {
+                print("Error: did not receive data")
+                return
+            }
+            
+            let responseString = String(data: data!, encoding: String.Encoding.utf8)
+            print("responseString = \(responseString!)")
+            do{
+                if let data = data,
+                    let json = try JSONSerialization.jsonObject(with: data) as? [String: Any],
+                    let propertys = json["property"] as? [Any] {
+                    print(propertys.count)
+                    // var i=0
+                    for property in propertys {
+                        self.apartment = Apartment()
+                        // i = i+1
+                        var property1 = property as? [String:Any]
+                        if let identifier = property1!["identifier"] as? [String: Any] {
+                            if let id : String? = String(describing: identifier["obPropId"]!){
+                                print(Int64(id!)!)
+                                self.apartment.apartmentId = Int64(id!)!
+                            }
+                            self.apartment.isRented = false
+                            self.apartment.rent = Double("".randomNumericInt())
+                            self.apartment.leaseSigned = false
+                            if let building:[String:Any] = property1!["building"] as? [String : Any]{
+                                if let size = building["size"] as? [String:Any]{
+                                    self.apartment.size = String(describing:size["universalsize"])
+                                }
+                                if let rooms = building["rooms"] as? [String:Any]{
+                                    self.apartment.numberOfBeds = Double(String(describing:rooms["beds"]!))
+                                    self.apartment.numberOfBaths = Double(String(describing:rooms["bathstotal"]!))
+                                    print( self.apartment.numberOfBeds!)
+                                }
+                            }
+                            
+                            if let summary:[String:Any] = property1!["summary"] as? [String:Any]{
+                                self.apartment.propertyType = summary["proptype"] as? String
+                            }
+                            self.apartment.propertyManagerUserName = self.propertyManager.userName
+                            print(property1!["address"]!)
+                            if let address = property1!["address"]! as? [String:String]{
+                                self.apartmentAddress.addressLine1 = address["line1"]
+                                print(self.apartmentAddress.addressLine1!)
+                                self.apartmentAddress.addressLine2 = ""
+                                self.apartmentAddress.city = address["locality"]
+                                self.apartmentAddress.country = address["country"]
+                                self.apartmentAddress.postalCode = Int(address["postal1"]!)
+                                self.apartmentAddress.state = address["countrySubd"]
+                            }
+                            if let location = property1!["location"] as? [String:Any]{
+                                self.apartmentAddress.latitude = Double((location["latitude"] as? String)!)
+                                self.apartmentAddress.longitude = Double((location["longitude"]as? String)!)
+                            }
+                            self.apartment.propertyAddress = self.apartmentAddress
+                        }
+                        let status = self.apartment.saveImagetoFirebase()
+                        
+                        OperationQueue.main.addOperation {
+                            self.presentAlert()
+                            self.clearTExtFields()
+                        }
+                    }}}catch  {
+                        print("error parsing response from POST on /todos")
+                        return
+            }
+        }
+        task.resume()
+    }
+    
 
 }

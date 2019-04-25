@@ -18,6 +18,7 @@ class User{
     var lastName: String?
     var profileImage: String?
     var role:Role?
+    var userId: String?
 }
 
 enum Role:String {

@@ -44,7 +44,8 @@ class Buyer:User{
         var role = self.role?.rawValue
         print(role!)
         let userObject =
-            ["firstName":self.firstName!,
+            ["userId":self.userId!,
+             "firstName":self.firstName!,
              "lastName":self.lastName!,
              "requestsRaised":self.requestsRaised!,
              "password":self.password!,

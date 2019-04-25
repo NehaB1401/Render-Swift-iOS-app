@@ -86,3 +86,14 @@ class Item{
         return status
     }*/
 }
+
+enum Category:String {
+    case Electronics
+    case Sports
+    case Home
+    case Kitchenware
+    case Fashion
+    case Vehicles
+    case Books
+    case Misc
+}
