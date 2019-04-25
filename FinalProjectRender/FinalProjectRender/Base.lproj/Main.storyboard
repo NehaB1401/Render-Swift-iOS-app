@@ -214,7 +214,7 @@
         <!--Feedback View Controller-->
         <scene sceneID="gOh-0P-2kk">
             <objects>
-                <viewController id="wc6-ex-Uch" userLabel="Feedback View Controller" sceneMemberID="viewController">
+                <viewController id="wc6-ex-Uch" userLabel="Feedback View Controller" customClass="FeedbackViewController" customModule="FinalProjectRender" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jc9-3y-AG4">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -336,7 +336,7 @@
         <!--Login View Controller-->
         <scene sceneID="PsR-7u-Ycu">
             <objects>
-                <viewController id="6KI-aW-9q7" userLabel="Login View Controller" sceneMemberID="viewController">
+                <viewController id="6KI-aW-9q7" userLabel="Login View Controller" customClass="LoginViewController" customModule="FinalProjectRender" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8Dn-WA-ASJ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -415,171 +415,198 @@
         <scene sceneID="c4k-fS-OW1">
             <objects>
                 <viewController id="6gj-0S-5qP" userLabel="Register View Controller" customClass="RegisterViewController" customModule="FinalProjectRender" customModuleProvider="target" sceneMemberID="viewController">
-                    <scrollView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" id="tm1-1H-nIK">
+                    <view key="view" contentMode="scaleToFill" id="qUV-ET-u16">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="register" translatesAutoresizingMaskIntoConstraints="NO" id="TYY-bm-AxM">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
-                            </imageView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tov-BN-Rkd">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="62Y-tX-aBs">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="First Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sbb-qo-1bD">
-                                        <rect key="frame" x="64" y="39" width="120" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Last Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9y9-CO-Lju">
-                                        <rect key="frame" x="190" y="39" width="120" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email id" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sZw-jY-QB7">
-                                        <rect key="frame" x="64" y="91" width="246" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PPq-mj-Blr">
-                                        <rect key="frame" x="64" y="137" width="246" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2an-Y9-QtE" userLabel="Password">
-                                        <rect key="frame" x="64" y="186" width="246" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Confirm Password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="B9e-3a-3Qy" userLabel="Confirm Password">
-                                        <rect key="frame" x="64" y="235" width="246" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Street" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Jm7-kW-PNZ" userLabel="Street">
-                                        <rect key="frame" x="64" y="335" width="184" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="City" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UFB-Ra-nPS">
-                                        <rect key="frame" x="64" y="388" width="120" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="State" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8Y9-4Q-wKs" userLabel="State">
-                                        <rect key="frame" x="190" y="388" width="120" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Country" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UcT-2u-Emy" userLabel="Country">
-                                        <rect key="frame" x="64" y="439" width="120" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Postal Code" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="USG-4U-dfZ">
-                                        <rect key="frame" x="190" y="439" width="120" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Apt" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EXs-mO-uwF" userLabel="Apt">
-                                        <rect key="frame" x="262" y="335" width="48" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Phone" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JCb-Pq-x1U" userLabel="Phone">
-                                        <rect key="frame" x="64" y="287" width="246" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ejq-E9-m9o">
-                                        <rect key="frame" x="64" y="496" width="110" height="26"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                                        <state key="normal" title="Upload Profile Image">
-                                            <color key="titleColor" red="1" green="0.49327188729999999" blue="0.47399842739999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="UploadProfileImg:" destination="6gj-0S-5qP" eventType="touchUpInside" id="Dav-Uo-1iT"/>
-                                        </connections>
-                                    </button>
-                                    <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4ug-Px-Ga9">
-                                        <rect key="frame" x="182" y="485" width="128" height="62"/>
-                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    </pickerView>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6R3-UM-kD5">
-                                        <rect key="frame" x="192" y="555" width="117" height="40"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
-                                        <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="17"/>
-                                        <state key="normal" title="Register">
-                                            <color key="titleColor" red="0.0" green="0.56031829119999998" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="registerBtn:" destination="6gj-0S-5qP" eventType="touchUpInside" id="uol-jb-rkx"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rg9-zE-evM">
-                                        <rect key="frame" x="63" y="545" width="50" height="50"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" image="Gmail-icon"/>
-                                    </button>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="register" translatesAutoresizingMaskIntoConstraints="NO" id="obX-zQ-226">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                                        <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
+                                    </imageView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bi2-oV-b9A">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                                        <subviews>
+                                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="First Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2UB-IX-5CB">
+                                                <rect key="frame" x="64" y="39" width="120" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Last Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zmj-D3-dbf">
+                                                <rect key="frame" x="190" y="39" width="120" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email id" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Snf-xg-k2g">
+                                                <rect key="frame" x="64" y="91" width="246" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WzJ-xF-0tV">
+                                                <rect key="frame" x="64" y="137" width="246" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Dik-C8-tzE" userLabel="Password">
+                                                <rect key="frame" x="64" y="186" width="246" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Confirm Password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZVb-pE-wTy" userLabel="Confirm Password">
+                                                <rect key="frame" x="64" y="235" width="246" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Street" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="K7k-oM-DTl" userLabel="Street">
+                                                <rect key="frame" x="64" y="335" width="184" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="City" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VlT-Lc-qb7">
+                                                <rect key="frame" x="64" y="373" width="74" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="State" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bUG-b1-aqs" userLabel="State">
+                                                <rect key="frame" x="152" y="373" width="53" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Country" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rEv-oV-imi" userLabel="Country">
+                                                <rect key="frame" x="64" y="410" width="141" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Apt" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ygi-O2-NIi" userLabel="Apt">
+                                                <rect key="frame" x="262" y="335" width="48" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Phone" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="k7S-1N-o9c" userLabel="Phone">
+                                                <rect key="frame" x="64" y="287" width="246" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ykM-hn-UwJ">
+                                                <rect key="frame" x="64" y="496" width="110" height="26"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="backgroundColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                                <state key="normal" title="Upload Profile Image">
+                                                    <color key="titleColor" red="1" green="0.49327188729999999" blue="0.47399842739999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="imagePicker:" destination="6gj-0S-5qP" eventType="touchUpInside" id="9aN-87-FdP"/>
+                                                </connections>
+                                            </button>
+                                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eAz-0H-40t">
+                                                <rect key="frame" x="182" y="485" width="128" height="62"/>
+                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <connections>
+                                                    <outlet property="dataSource" destination="6gj-0S-5qP" id="g8t-R9-vyr"/>
+                                                    <outlet property="delegate" destination="6gj-0S-5qP" id="23P-rG-1Q5"/>
+                                                </connections>
+                                            </pickerView>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hZa-Mh-Xiz">
+                                                <rect key="frame" x="192" y="555" width="117" height="40"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="backgroundColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
+                                                <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="17"/>
+                                                <state key="normal" title="Register">
+                                                    <color key="titleColor" red="0.0" green="0.56031829119999998" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="registerBtn:" destination="6gj-0S-5qP" eventType="touchUpInside" id="s80-YU-J1p"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wgM-2G-zuN">
+                                                <rect key="frame" x="63" y="545" width="50" height="50"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" image="Gmail-icon"/>
+                                            </button>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6lg-eI-O1U">
+                                                <rect key="frame" x="213" y="373" width="96" height="105"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </imageView>
+                                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Postal Code" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EBL-Sl-9qs">
+                                                <rect key="frame" x="64" y="448" width="141" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                        </subviews>
+                                        <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
+                                    </view>
                                 </subviews>
-                                <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
-                            </view>
+                                <constraints>
+                                    <constraint firstItem="bi2-oV-b9A" firstAttribute="top" secondItem="6w6-JW-vZ8" secondAttribute="top" id="7tW-Mm-d3S"/>
+                                    <constraint firstItem="bi2-oV-b9A" firstAttribute="trailing" secondItem="6w6-JW-vZ8" secondAttribute="trailing" id="B36-cb-9ny"/>
+                                    <constraint firstItem="bi2-oV-b9A" firstAttribute="bottom" secondItem="obX-zQ-226" secondAttribute="bottom" id="BER-2d-S0h"/>
+                                    <constraint firstAttribute="trailing" secondItem="bi2-oV-b9A" secondAttribute="trailing" id="DFT-7K-Um9"/>
+                                    <constraint firstItem="bi2-oV-b9A" firstAttribute="bottom" secondItem="6w6-JW-vZ8" secondAttribute="bottom" id="H2a-hH-bHP"/>
+                                    <constraint firstItem="bi2-oV-b9A" firstAttribute="leading" secondItem="6w6-JW-vZ8" secondAttribute="leading" id="O31-5e-5um"/>
+                                    <constraint firstAttribute="bottom" secondItem="obX-zQ-226" secondAttribute="bottom" id="TIJ-bF-mne"/>
+                                    <constraint firstItem="obX-zQ-226" firstAttribute="trailing" secondItem="bi2-oV-b9A" secondAttribute="trailing" id="eMk-TE-pc5"/>
+                                    <constraint firstItem="obX-zQ-226" firstAttribute="leading" secondItem="bi2-oV-b9A" secondAttribute="leading" id="wa3-nf-1Zu"/>
+                                    <constraint firstItem="bi2-oV-b9A" firstAttribute="top" secondItem="obX-zQ-226" secondAttribute="top" id="zhZ-AV-v0c"/>
+                                </constraints>
+                                <viewLayoutGuide key="safeArea" id="6w6-JW-vZ8"/>
+                            </scrollView>
                         </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="Tov-BN-Rkd" firstAttribute="top" secondItem="ZDj-9D-RmW" secondAttribute="top" id="1nY-bq-aCw"/>
-                            <constraint firstItem="Tov-BN-Rkd" firstAttribute="leading" secondItem="ZDj-9D-RmW" secondAttribute="leading" id="TOb-2E-hX1"/>
-                            <constraint firstItem="Tov-BN-Rkd" firstAttribute="trailing" secondItem="ZDj-9D-RmW" secondAttribute="trailing" id="fch-AT-Vs3"/>
-                            <constraint firstItem="Tov-BN-Rkd" firstAttribute="bottom" secondItem="ZDj-9D-RmW" secondAttribute="bottom" id="wNX-zc-YkL"/>
+                            <constraint firstItem="62Y-tX-aBs" firstAttribute="leading" secondItem="qUV-ET-u16" secondAttribute="leading" id="NEc-bN-HSy"/>
+                            <constraint firstAttribute="trailing" secondItem="62Y-tX-aBs" secondAttribute="trailing" id="ZII-jw-MDi"/>
+                            <constraint firstItem="62Y-tX-aBs" firstAttribute="top" secondItem="qUV-ET-u16" secondAttribute="top" id="p11-Ni-Zfc"/>
+                            <constraint firstItem="62Y-tX-aBs" firstAttribute="bottom" secondItem="e1I-dE-9z8" secondAttribute="bottom" id="qIG-x2-v0u"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="ZDj-9D-RmW"/>
-                    </scrollView>
+                        <viewLayoutGuide key="safeArea" id="e1I-dE-9z8"/>
+                    </view>
                     <connections>
-                        <outlet property="aptTxt" destination="EXs-mO-uwF" id="fbh-86-EHt"/>
-                        <outlet property="cityTxt" destination="UFB-Ra-nPS" id="wtC-Z1-8HQ"/>
-                        <outlet property="countryTxt" destination="UcT-2u-Emy" id="NGv-GD-EVg"/>
-                        <outlet property="emailTxt" destination="sZw-jY-QB7" id="Rc7-Ye-bEw"/>
-                        <outlet property="firstNameTxt" destination="sbb-qo-1bD" id="tNW-Jk-a1L"/>
-                        <outlet property="lastNameTxt" destination="9y9-CO-Lju" id="EhA-GZ-Oq3"/>
-                        <outlet property="passTxt" destination="2an-Y9-QtE" id="03Q-bA-fHF"/>
-                        <outlet property="phoneTxt" destination="JCb-Pq-x1U" id="5BG-iZ-cj6"/>
-                        <outlet property="rolePicker" destination="4ug-Px-Ga9" id="G5B-0N-r6m"/>
-                        <outlet property="stateTxt" destination="8Y9-4Q-wKs" id="1hQ-MK-h4X"/>
-                        <outlet property="streetTxt" destination="Jm7-kW-PNZ" id="nHg-62-k1b"/>
-                        <outlet property="usernameTxt" destination="PPq-mj-Blr" id="g8j-Aj-ymx"/>
-                        <outlet property="verPassTxt" destination="B9e-3a-3Qy" id="BJO-y8-eNa"/>
-                        <outlet property="zipTxt" destination="USG-4U-dfZ" id="nHu-hs-z74"/>
+                        <outlet property="aptTxt" destination="Ygi-O2-NIi" id="tF4-B0-Epa"/>
+                        <outlet property="cityTxt" destination="VlT-Lc-qb7" id="hAi-ja-n8U"/>
+                        <outlet property="countryTxt" destination="rEv-oV-imi" id="9rd-cL-deI"/>
+                        <outlet property="emailTxt" destination="Snf-xg-k2g" id="DGI-IH-2gq"/>
+                        <outlet property="firstNameTxt" destination="2UB-IX-5CB" id="vyN-TP-FOc"/>
+                        <outlet property="image" destination="6lg-eI-O1U" id="KB8-lW-zCl"/>
+                        <outlet property="lastNametxt" destination="zmj-D3-dbf" id="4NJ-yj-XzL"/>
+                        <outlet property="passTxt" destination="Dik-C8-tzE" id="3Fg-nk-h7k"/>
+                        <outlet property="phoneTxt" destination="k7S-1N-o9c" id="kmR-Dz-fZe"/>
+                        <outlet property="rolePicker" destination="eAz-0H-40t" id="vPC-2T-tnV"/>
+                        <outlet property="stateTxt" destination="bUG-b1-aqs" id="6yc-q1-cbx"/>
+                        <outlet property="streetTxt" destination="K7k-oM-DTl" id="Zk0-w7-FZO"/>
+                        <outlet property="usernameTxt" destination="WzJ-xF-0tV" id="3Tl-cf-ok9"/>
+                        <outlet property="verPassTxt" destination="ZVb-pE-wTy" id="4xS-g8-kJ3"/>
+                        <outlet property="zipTxt" destination="EBL-Sl-9qs" id="KzK-jo-03U"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="g6I-mc-RER" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -589,7 +616,7 @@
         <!--Item List View Controller-->
         <scene sceneID="aNA-eP-po0">
             <objects>
-                <viewController id="sAg-Gs-Dr7" userLabel="Item List View Controller" sceneMemberID="viewController">
+                <viewController id="sAg-Gs-Dr7" userLabel="Item List View Controller" customClass="ItemListViewController" customModule="FinalProjectRender" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Mq9-fL-moT">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -714,7 +741,7 @@
                                     <segue destination="h2X-L4-i2e" kind="show" id="f9D-dM-z86"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CBo-WT-WiE" userLabel="SideView">
+                            <view hidden="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CBo-WT-WiE" userLabel="SideView">
                                 <rect key="frame" x="0.0" y="64" width="191" height="603"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
@@ -816,7 +843,7 @@
         <!--Item Detail View Controller-->
         <scene sceneID="ppb-ne-cQK">
             <objects>
-                <viewController id="h2X-L4-i2e" userLabel="Item Detail View Controller" sceneMemberID="viewController">
+                <viewController id="h2X-L4-i2e" userLabel="Item Detail View Controller" customClass="ItemDetailViewController" customModule="FinalProjectRender" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vD1-K7-10h">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -967,7 +994,7 @@
         <!--About View Controller-->
         <scene sceneID="owD-hF-N7H">
             <objects>
-                <viewController id="xqR-We-yPT" userLabel="About View Controller" sceneMemberID="viewController">
+                <viewController id="xqR-We-yPT" userLabel="About View Controller" customClass="AboutViewController" customModule="FinalProjectRender" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ner-bs-aBy">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1053,7 +1080,7 @@
         <!--Seller List View Controller-->
         <scene sceneID="MQy-ps-jBf">
             <objects>
-                <viewController id="8AS-So-L56" userLabel="Seller List View Controller" sceneMemberID="viewController">
+                <viewController id="8AS-So-L56" userLabel="Seller List View Controller" customClass="SellerListViewController" customModule="FinalProjectRender" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Agm-Lz-2ai">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

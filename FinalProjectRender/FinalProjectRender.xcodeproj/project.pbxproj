@@ -11,6 +11,12 @@
 		4337689A226F7658004AC370 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43376899226F7658004AC370 /* RegisterViewController.swift */; };
 		4337689C226F7665004AC370 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4337689B226F7665004AC370 /* LoginViewController.swift */; };
 		43471EB82270219A006D04DA /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43471EB72270219A006D04DA /* Util.swift */; };
+		43471EBE2270E5CE006D04DA /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43471EBA2270E5CE006D04DA /* Item.swift */; };
+		43471EBF2270E5CE006D04DA /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43471EBB2270E5CE006D04DA /* User.swift */; };
+		43471EC02270E5CE006D04DA /* Buyer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43471EBC2270E5CE006D04DA /* Buyer.swift */; };
+		43471EC12270E5CE006D04DA /* Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43471EBD2270E5CE006D04DA /* Address.swift */; };
+		43471EC32270F867006D04DA /* Payment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43471EC22270F867006D04DA /* Payment.swift */; };
+		43471EC52270FA0C006D04DA /* MaintenanceRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43471EC42270FA0C006D04DA /* MaintenanceRequest.swift */; };
 		4396CB3822700DD200DFA95C /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4396CB3722700DD200DFA95C /* AboutViewController.swift */; };
 		4396CB3A22700DDF00DFA95C /* FeedbackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4396CB3922700DDF00DFA95C /* FeedbackViewController.swift */; };
 		4396CB3C22700E1100DFA95C /* ItemListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4396CB3B22700E1100DFA95C /* ItemListViewController.swift */; };
@@ -24,7 +30,7 @@
 		43DB822C226C0BCA007A5567 /* FinalProjectRenderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43DB822B226C0BCA007A5567 /* FinalProjectRenderTests.swift */; };
 		43DB8237226C0BCA007A5567 /* FinalProjectRenderUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43DB8236226C0BCA007A5567 /* FinalProjectRenderUITests.swift */; };
 		43DB8247226C0C4E007A5567 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 43DB8246226C0C4E007A5567 /* GoogleService-Info.plist */; };
-		43DB826D226D2AC3007A5567 /* Model in Resources */ = {isa = PBXBuildFile; fileRef = 43DB826C226D2AC2007A5567 /* Model */; };
+		43DB826D226D2AC3007A5567 /* Model1 in Resources */ = {isa = PBXBuildFile; fileRef = 43DB826C226D2AC2007A5567 /* Model1 */; };
 		B58267E0D3423E13EBCB3D4D /* Pods_FinalProjectRenderTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B3DFD8A22E09C0F8584DA24 /* Pods_FinalProjectRenderTests.framework */; };
 		C63FBEF41ED11474323DAE48 /* Pods_FinalProjectRenderUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53207F817C8448B0F2D21FA4 /* Pods_FinalProjectRenderUITests.framework */; };
 /* End PBXBuildFile section */
@@ -50,6 +56,12 @@
 		43376899226F7658004AC370 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		4337689B226F7665004AC370 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		43471EB72270219A006D04DA /* Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
+		43471EBA2270E5CE006D04DA /* Item.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Item.swift; path = FinalProjectRender/Model1/Item.swift; sourceTree = SOURCE_ROOT; };
+		43471EBB2270E5CE006D04DA /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = User.swift; path = FinalProjectRender/Model1/User.swift; sourceTree = SOURCE_ROOT; };
+		43471EBC2270E5CE006D04DA /* Buyer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Buyer.swift; path = FinalProjectRender/Model1/Buyer.swift; sourceTree = SOURCE_ROOT; };
+		43471EBD2270E5CE006D04DA /* Address.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Address.swift; path = FinalProjectRender/Model1/Address.swift; sourceTree = SOURCE_ROOT; };
+		43471EC22270F867006D04DA /* Payment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Payment.swift; path = FinalProjectRender/Model1/Payment.swift; sourceTree = SOURCE_ROOT; };
+		43471EC42270FA0C006D04DA /* MaintenanceRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MaintenanceRequest.swift; path = FinalProjectRender/Model1/MaintenanceRequest.swift; sourceTree = SOURCE_ROOT; };
 		4396CB3722700DD200DFA95C /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		4396CB3922700DDF00DFA95C /* FeedbackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackViewController.swift; sourceTree = "<group>"; };
 		4396CB3B22700E1100DFA95C /* ItemListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemListViewController.swift; sourceTree = "<group>"; };
@@ -69,7 +81,7 @@
 		43DB8236226C0BCA007A5567 /* FinalProjectRenderUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinalProjectRenderUITests.swift; sourceTree = "<group>"; };
 		43DB8238226C0BCA007A5567 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		43DB8246226C0C4E007A5567 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		43DB826C226D2AC2007A5567 /* Model */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Model; sourceTree = "<group>"; };
+		43DB826C226D2AC2007A5567 /* Model1 */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Model1; sourceTree = "<group>"; };
 		53207F817C8448B0F2D21FA4 /* Pods_FinalProjectRenderUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FinalProjectRenderUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5BCCC2B5962B3C4D15E87DFA /* Pods-FinalProjectRenderUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FinalProjectRenderUITests.release.xcconfig"; path = "Target Support Files/Pods-FinalProjectRenderUITests/Pods-FinalProjectRenderUITests.release.xcconfig"; sourceTree = "<group>"; };
 		643066AEF5BDAD29957C841D /* Pods-FinalProjectRenderTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FinalProjectRenderTests.release.xcconfig"; path = "Target Support Files/Pods-FinalProjectRenderTests/Pods-FinalProjectRenderTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -141,6 +153,19 @@
 			path = Foundation;
 			sourceTree = "<group>";
 		};
+		43471EB92270E59D006D04DA /* Modal */ = {
+			isa = PBXGroup;
+			children = (
+				43471EC42270FA0C006D04DA /* MaintenanceRequest.swift */,
+				43471EC22270F867006D04DA /* Payment.swift */,
+				43471EBD2270E5CE006D04DA /* Address.swift */,
+				43471EBC2270E5CE006D04DA /* Buyer.swift */,
+				43471EBA2270E5CE006D04DA /* Item.swift */,
+				43471EBB2270E5CE006D04DA /* User.swift */,
+			);
+			path = Modal;
+			sourceTree = "<group>";
+		};
 		43DB820A226C0BC9007A5567 = {
 			isa = PBXGroup;
 			children = (
@@ -167,9 +192,10 @@
 		43DB8215226C0BC9007A5567 /* FinalProjectRender */ = {
 			isa = PBXGroup;
 			children = (
+				43471EB92270E59D006D04DA /* Modal */,
 				43471EB622702187006D04DA /* Foundation */,
 				43376892226F7315004AC370 /* Controllers */,
-				43DB826C226D2AC2007A5567 /* Model */,
+				43DB826C226D2AC2007A5567 /* Model1 */,
 				43DB8246226C0C4E007A5567 /* GoogleService-Info.plist */,
 				43DB8216226C0BC9007A5567 /* AppDelegate.swift */,
 				43DB8218226C0BC9007A5567 /* ViewController.swift */,
@@ -327,7 +353,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				43DB826D226D2AC3007A5567 /* Model in Resources */,
+				43DB826D226D2AC3007A5567 /* Model1 in Resources */,
 				43DB8221226C0BCA007A5567 /* LaunchScreen.storyboard in Resources */,
 				43DB8247226C0C4E007A5567 /* GoogleService-Info.plist in Resources */,
 				43DB821E226C0BCA007A5567 /* Assets.xcassets in Resources */,
@@ -361,6 +387,7 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-FinalProjectRender/Pods-FinalProjectRender-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
@@ -369,6 +396,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
@@ -455,12 +483,18 @@
 				4396CB3C22700E1100DFA95C /* ItemListViewController.swift in Sources */,
 				4396CB3E22700ECC00DFA95C /* ItemDetailViewController.swift in Sources */,
 				4396CB3A22700DDF00DFA95C /* FeedbackViewController.swift in Sources */,
+				43471EC32270F867006D04DA /* Payment.swift in Sources */,
 				4337689A226F7658004AC370 /* RegisterViewController.swift in Sources */,
 				43DB8219226C0BC9007A5567 /* ViewController.swift in Sources */,
+				43471EC12270E5CE006D04DA /* Address.swift in Sources */,
+				43471EBE2270E5CE006D04DA /* Item.swift in Sources */,
 				4396CB3822700DD200DFA95C /* AboutViewController.swift in Sources */,
+				43471EBF2270E5CE006D04DA /* User.swift in Sources */,
 				43471EB82270219A006D04DA /* Util.swift in Sources */,
 				4396CB4022700F0200DFA95C /* SellerListViewController.swift in Sources */,
 				43DB8217226C0BC9007A5567 /* AppDelegate.swift in Sources */,
+				43471EC02270E5CE006D04DA /* Buyer.swift in Sources */,
+				43471EC52270FA0C006D04DA /* MaintenanceRequest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

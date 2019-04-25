@@ -8,7 +8,13 @@
 
 import UIKit
 
+var i = 0{
+    didSet{
+        
+    }
+}
 class ItemDetailViewController: UIViewController {
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
