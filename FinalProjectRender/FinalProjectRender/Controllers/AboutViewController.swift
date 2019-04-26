@@ -10,9 +10,22 @@ import UIKit
 
 class AboutViewController: UIViewController {
 
+    @IBOutlet weak var name: UILabel!
+    @IBOutlet weak var job: UILabel!
+    @IBOutlet weak var website: UILabel!
+    @IBOutlet weak var about: UILabel!
+    @IBAction func websiteBtn(_ sender: UIButton) {
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        var neha = Member()
+        name.text = "Neha Bhangale"
+        website.text = "https://linkedin.com/in/neha-bhangale"
+        //neha.web = "http://www.github.com/NehaB1401"
+        neha.imageName = "neha"
+        neha.about = ""
+        neha.location = ""
+        job.text = "Full Stack Developer"
         // Do any additional setup after loading the view.
     }
     

@@ -182,6 +182,7 @@ class ItemDetailViewController: UIViewController, UICollectionViewDelegate, UICo
             self.itemDetails.sellerName = self.loggedInUserId
             self.itemDetails.itemId = UUID().uuidString;
             self.itemDetails.itemList = self.itemList
+            self.itemDetails.description = self.descTxt.text
 
             print(location.coordinate.latitude)
             print(location.coordinate.longitude)
@@ -209,6 +210,7 @@ class ItemDetailViewController: UIViewController, UICollectionViewDelegate, UICo
         super.viewDidLoad()
 
         imagePicker.delegate = self
+
         // Do any additional setup after loading the view.
     }
     

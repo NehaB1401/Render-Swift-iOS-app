@@ -33,7 +33,9 @@ class Item{
         //let lsigned = (String(describing: self.leaseSigned!))
         let price = self.price
         print(self.itemImages!)
-        ref?.child(aid).setValue(["isSold":soldis, "ItemType":self.itemCategory!, "SellerUserName":self.sellerName!,"price":price!,"itemImages":self.itemImages!])
+        self.itemPayments = [Payment]()
+        let isBooked = String(describing: false)
+        ref?.child(aid).setValue(["itemTitle":self.itemTitle, "isSold":soldis, "itemCategory":self.itemCategory!, "sellerName":self.sellerName!,"price":price!,"itemImages":self.itemImages!, "itemPayments":self.itemPayments,"itemBooked":isBooked, "description": self.description])
         print((self.propertyAddress?.addressLine1)!)
             print((self.propertyAddress?.state)!)
             print((self.propertyAddress?.city)!)
@@ -41,7 +43,7 @@ class Item{
            // print((self.propertyAddress?.country)!)
             print((self.propertyAddress?.longitude)!)
             print((self.propertyAddress?.latitude)!)
-        ref?.child(aid).child("address").setValue(["addressLine1":(self.propertyAddress?.addressLine1)!, "state": (self.propertyAddress?.state)!, "city":(self.propertyAddress?.city)!, "postalcode": (self.propertyAddress?.postalCode)!, "latitude": (self.propertyAddress?.latitude)!, "longitude":(self.propertyAddress?.longitude)!])
+        ref?.child(aid).child("propertyAddress").setValue(["addressLine1":(self.propertyAddress?.addressLine1)!, "state": (self.propertyAddress?.state)!, "city":(self.propertyAddress?.city)!, "postalcode": (self.propertyAddress?.postalCode)!, "latitude": (self.propertyAddress?.latitude)!, "longitude":(self.propertyAddress?.longitude)!])
         i = i + 1
         print("----------i-------------------")
         print(i)
