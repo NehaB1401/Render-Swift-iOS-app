@@ -877,9 +877,6 @@
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
-                                                <connections>
-                                                    <action selector="titleTxt:" destination="h2X-L4-i2e" eventType="editingDidEnd" id="Aik-3B-rT9"/>
-                                                </connections>
                                             </textField>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Description" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="xof-ps-8DU">
                                                 <rect key="frame" x="8" y="224" width="359" height="91"/>
@@ -1055,7 +1052,7 @@
                         <outlet property="imageCollection" destination="cCp-a6-kpW" id="YRp-wF-bsG"/>
                         <outlet property="priceTxt" destination="gfB-kF-dZj" id="R7V-eu-Y74"/>
                         <outlet property="stateTxt" destination="Nu3-fV-K3X" id="2zr-LB-y8R"/>
-                        <outlet property="titleTxt" destination="cxr-jW-Fsy" id="rbQ-vx-SNV"/>
+                        <outlet property="titleTxt" destination="cxr-jW-Fsy" id="XNM-Vx-c1h"/>
                         <outlet property="zipTxt" destination="lO3-bB-dBr" id="STs-fJ-JeX"/>
                     </connections>
                 </viewController>

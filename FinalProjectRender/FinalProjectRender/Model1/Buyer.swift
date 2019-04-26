@@ -55,7 +55,21 @@ class Buyer:User{
              "phone":self.phone!] as [String:Any]
         ref?.child(self.userName!).setValue(userObject)
         
-        ref?.child(self.userName!).child("address").setValue(["addressLine1":(self.address?.addressLine1!)!, "addressLine2":(self.address?.addressLine2!)!,"city":(self.address?.city!)!,"state":(self.address?.state!)!, "postalcode":(self.address?.postalCode!)!])
+        ref?.child(self.userName!).child("address").setValue(["addressLine1":(self.address?.addressLine1!)!, "addressLine2":(self.address?.addressLine2!)!,"city":(self.address?.city!)!,"state":(self.address?.state!)!, "postalcode":(self.address?.postalCode!)!, "latitude": (self.address?.latitude)!, "longitude":(self.address?.longitude)!])
+        self.createUser()
+    }
+    
+    func createUser(){
+        Auth.auth().createUser(withEmail: self.email!, password: password!) { user, error in
+            if error == nil && user != nil {
+                print("User created!")
+                
+                
+            } else {
+                print("Error: \(error!.localizedDescription)")
+            }
+        }
+
     }
     
 }

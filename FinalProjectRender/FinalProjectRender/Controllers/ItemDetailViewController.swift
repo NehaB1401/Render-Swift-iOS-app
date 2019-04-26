@@ -16,18 +16,41 @@ var i = 0{
         
     }
 }
-class ItemDetailViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource,UIPickerViewDataSource, UIPickerViewDelegate  {
+
+extension String {
+    func randomNumericInt() -> Int {
+        let charactersString = "0123456789"
+        let charactersArray : [Character] = Array(charactersString.characters)
+        
+        var string = ""
+        for _ in 0..<4 {
+            string.append(charactersArray[Int(arc4random()) % charactersArray.count])
+        }
+        
+        return Int(string)!
+    }
+    
+    
+}
+class ItemDetailViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource,UIPickerViewDataSource, UIPickerViewDelegate,UINavigationControllerDelegate, UIImagePickerControllerDelegate {
+    
+    let imageRef = Storage.storage().reference().child("images")
       var loggedInUserId = ""
      var itemList = [UIImage]();
+    var imageNames = [String]();
     let itemDetails = Item()
+    var item = Item()
+    let itemAddress = Address()
     let address = Address()
+    
+    var imagePicker = UIImagePickerController();
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return itemList.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = imageCollection.dequeueReusableCell(withReuseIdentifier: "imageCell", for: indexPath) as? ImageCollectionViewCell
-        cell?.image.image = itemList[indexPath.row]
+        cell?.image.image = UIImage(named: "register")
         return cell!
     }
     var category = "Misc";
@@ -61,10 +84,8 @@ class ItemDetailViewController: UIViewController, UICollectionViewDelegate, UICo
    
 
     @IBOutlet weak var imageCollection: UICollectionView!
-    
+
     @IBOutlet weak var titleTxt: UITextField!
-    
-    
     @IBOutlet weak var descTxt: UITextView!
 
     @IBOutlet weak var priceTxt: UITextField!
@@ -72,8 +93,16 @@ class ItemDetailViewController: UIViewController, UICollectionViewDelegate, UICo
     }
     @IBOutlet weak var categoryScroll: UIPickerView!
     @IBAction func addImage(_ sender: UIButton) {
+        imagePicker.allowsEditing = true
+        imagePicker.sourceType = .photoLibrary
+        self.present(imagePicker, animated: true, completion: nil)
     }
-    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]){
+        if let image: UIImage = info[UIImagePickerController.InfoKey.editedImage] as? UIImage{
+            self.itemList.append(image)
+        }
+        dismiss(animated: true, completion: nil)
+    }
     @IBOutlet weak var AddressLine1: UITextField!
     @IBOutlet weak var cityTxt: UITextField!
     @IBOutlet weak var stateTxt: UITextField!
@@ -152,12 +181,13 @@ class ItemDetailViewController: UIViewController, UICollectionViewDelegate, UICo
             self.itemDetails.itemBooked = false;
             self.itemDetails.sellerName = self.loggedInUserId
             self.itemDetails.itemId = UUID().uuidString;
+            self.itemDetails.itemList = self.itemList
 
             print(location.coordinate.latitude)
             print(location.coordinate.longitude)
-            var itemId : String =
-            userName = userName.replacingOccurrences(of: ".", with: ",")
-            ref?.child(userName).observeSingleEvent(of: .value, with: { (snapshot) in
+            var itemId : String = self.itemDetails.itemId!
+           // userName = userName.replacingOccurrences(of: ".", with: ",")
+            ref?.child(itemId).observeSingleEvent(of: .value, with: { (snapshot) in
                 
                 if(snapshot.hasChildren()){
                     let alert = UIAlertController(title: "ALERT", message: "EMAIL ALREADY REGISTERED FOR RENDER USER!!", preferredStyle: .alert)
@@ -165,42 +195,12 @@ class ItemDetailViewController: UIViewController, UICollectionViewDelegate, UICo
                     self.present(alert, animated: true, completion: nil)
                     return
                 }
-                if self.itemDetails.profileImage == nil {
-                    self.itemDetails.profileImage = "self.image.image!.pngData()! as Data";
-                }
+                
+                self.uploadImage()
+                self.itemDetails.itemImages = self.imageNames
                 self.itemDetails.saveToFirebase()
-                self.presentAlert()
-                // 1. Upload the profile image to Firebase Storage
-                
-                self.uploadProfileImage(self.image.image!) { url in
-                    
-                    if url != nil {
-                        let changeRequest = Auth.auth().currentUser?.createProfileChangeRequest()
-                        changeRequest?.displayName = userName
-                        changeRequest?.photoURL = url
-                        
-                        changeRequest?.commitChanges { error in
-                            if error == nil {
-                                print("User display name changed!")
-                                
-                                self.saveProfile(username: userName, profileImageURL: url!) { success in
-                                    if success {
-                                        self.dismiss(animated: true, completion: nil)
-                                    }
-                                }
-                                
-                            } else {
-                                print("Error: \(error!.localizedDescription)")
-                            }
-                        }
-                    } else {
-                        // Error unable to upload profile image
-                    }
-                    
-                }
-                
-                
-                //self.itemDetails.saveImagetoFirebase()
+                self.getProperties()
+               
             })
         }
         
@@ -208,6 +208,7 @@ class ItemDetailViewController: UIViewController, UICollectionViewDelegate, UICo
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        imagePicker.delegate = self
         // Do any additional setup after loading the view.
     }
     
@@ -221,6 +222,39 @@ class ItemDetailViewController: UIViewController, UICollectionViewDelegate, UICo
         // Pass the selected object to the new view controller.
     }
     */
+    
+    func presentAlert(){
+        let alert = UIAlertController(title: "SUCCESS", message: "SUCCESSFULLY CREATED ITEM !!", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+    }
+    let filename = "demo1.jpg"
+    func uploadImage()
+    {
+        
+        for i in 0...((self.itemList.count)-1) {
+            let image = self.itemList[i]
+            guard let imageData = image.jpegData(compressionQuality: 0.75) else { return }
+            let imageName = "".randomAlphaNumericString(8)+".jpg"
+            let uploadImageRef = imageRef.child(imageName)
+            let metaData = StorageMetadata()
+            self.imageNames.append(imageName)
+            let uploadTask = uploadImageRef.putData(imageData, metadata: metaData) { (metadata, error) in
+                print("Upload image finished")
+                print(metadata ?? "NO METADATA")
+                print(error ?? "ERROR")
+                
+            }
+            
+            uploadTask.observe(.progress) { (snapshot) in
+                
+                print(snapshot.progress ?? "NO MORE PROGRESS")
+            }
+            
+            //uploadTask.resume()
+        }
+    }
+    
     
     func getProperties(){
         let session = URLSession.shared
@@ -255,53 +289,44 @@ class ItemDetailViewController: UIViewController, UICollectionViewDelegate, UICo
                     print(propertys.count)
                     // var i=0
                     for property in propertys {
-                        self.apartment = Apartment()
+                        self.item = Item()
                         // i = i+1
                         var property1 = property as? [String:Any]
                         if let identifier = property1!["identifier"] as? [String: Any] {
                             if let id : String? = String(describing: identifier["obPropId"]!){
-                                print(Int64(id!)!)
-                                self.apartment.apartmentId = Int64(id!)!
+                                print(id!)
+                                self.item.itemId = id!
                             }
-                            self.apartment.isRented = false
-                            self.apartment.rent = Double("".randomNumericInt())
-                            self.apartment.leaseSigned = false
-                            if let building:[String:Any] = property1!["building"] as? [String : Any]{
-                                if let size = building["size"] as? [String:Any]{
-                                    self.apartment.size = String(describing:size["universalsize"])
-                                }
-                                if let rooms = building["rooms"] as? [String:Any]{
-                                    self.apartment.numberOfBeds = Double(String(describing:rooms["beds"]!))
-                                    self.apartment.numberOfBaths = Double(String(describing:rooms["bathstotal"]!))
-                                    print( self.apartment.numberOfBeds!)
-                                }
-                            }
+                            self.item.isSold = false
+                            self.item.price = Double("".randomNumericInt())
+                            self.item.itemBooked = false
+                           
                             
-                            if let summary:[String:Any] = property1!["summary"] as? [String:Any]{
-                                self.apartment.propertyType = summary["proptype"] as? String
+                            if let summary:[String:Any] = property1!["description"] as? [String:Any]{
+                                self.item.itemCategory = summary["proptype"] as? String
                             }
-                            self.apartment.propertyManagerUserName = self.propertyManager.userName
+                            self.item.sellerName = self.loggedInUserId
                             print(property1!["address"]!)
                             if let address = property1!["address"]! as? [String:String]{
-                                self.apartmentAddress.addressLine1 = address["line1"]
-                                print(self.apartmentAddress.addressLine1!)
-                                self.apartmentAddress.addressLine2 = ""
-                                self.apartmentAddress.city = address["locality"]
-                                self.apartmentAddress.country = address["country"]
-                                self.apartmentAddress.postalCode = Int(address["postal1"]!)
-                                self.apartmentAddress.state = address["countrySubd"]
+                                self.itemAddress.addressLine1 = address["line1"]
+                                print(self.itemAddress.addressLine1!)
+                                self.itemAddress.addressLine2 = ""
+                                self.itemAddress.city = address["locality"]
+                                self.itemAddress.country = address["country"]
+                                self.itemAddress.postalCode = Int(address["postal1"]!)
+                                self.itemAddress.state = address["countrySubd"]
                             }
                             if let location = property1!["location"] as? [String:Any]{
-                                self.apartmentAddress.latitude = Double((location["latitude"] as? String)!)
-                                self.apartmentAddress.longitude = Double((location["longitude"]as? String)!)
+                                self.itemAddress.latitude = Double((location["latitude"] as? String)!)
+                                self.itemAddress.longitude = Double((location["longitude"]as? String)!)
                             }
-                            self.apartment.propertyAddress = self.apartmentAddress
+                            self.item.propertyAddress = self.itemAddress
                         }
-                        let status = self.apartment.saveImagetoFirebase()
+                        let status = self.item.saveImagetoFirebase()
                         
                         OperationQueue.main.addOperation {
                             self.presentAlert()
-                            self.clearTExtFields()
+                          //  self.clearTExtFields()
                         }
                     }}}catch  {
                         print("error parsing response from POST on /todos")

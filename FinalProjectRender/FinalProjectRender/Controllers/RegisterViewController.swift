@@ -166,6 +166,7 @@ class RegisterViewController: UIViewController, UIPickerViewDataSource, UIPicker
         self.buyer.lastName = self.lastNametxt.text
         self.buyer.itemList = []
         self.buyer.allRequests = []
+        self.buyer.email = self.emailTxt.text
         let email = self.emailTxt.text?.replacingOccurrences(of: ".", with: ",")
         self.buyer.userName = self.usernameTxt.text
         self.buyer.password = self.passTxt.text

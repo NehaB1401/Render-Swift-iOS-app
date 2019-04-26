@@ -35,7 +35,7 @@ class LoginViewController: UIViewController {
             let userpassword = value?["password"] as? String
             let userrole = value?["role"] as? String
             let userId = value?["userId"] as? String
-            
+         //   self.uploadImage()
             if(userpassword == nil){
                 flag = false
             }else{
@@ -89,8 +89,29 @@ class LoginViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
+    let filename = "demo.jpg"
+    func uploadImage()
+    {
+        let imageRef = Storage.storage().reference().child("images")
+        guard let image = UIImage(named: "register") else {return}
+        guard let imageData = image.jpegData(compressionQuality: 0.75) else { return }
+        
+        let uploadImageRef = imageRef.child(filename)
+        
+        let uploadTask = uploadImageRef.putData(imageData, metadata: nil) { (metadata, error) in
+            print("Upload image finished")
+            print(metadata ?? "NO METADATA")
+            print(error ?? "ERROR")
+        }
+        
+        uploadTask.observe(.progress) { (snapshot) in
+            
+            print(snapshot.progress ?? "NO MORE PROGRESS")
+        }
+    }
 }
+
+
 
 extension UITextField {
     func shake() {

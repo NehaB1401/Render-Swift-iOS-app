@@ -12,6 +12,7 @@ import FirebaseDatabase
 class User{
     var phone: Int64?
     var address: Address?
+    var email: String?
     var userName: String?
     var password: String?
     var firstName: String?
