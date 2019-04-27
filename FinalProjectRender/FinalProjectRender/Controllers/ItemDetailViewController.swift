@@ -104,16 +104,39 @@ class ItemDetailViewController: UIViewController, UICollectionViewDelegate, UICo
     }
     @IBOutlet weak var categoryScroll: UIPickerView!
     @IBAction func addImage(_ sender: UIButton) {
-        imagePicker.allowsEditing = true
-        imagePicker.sourceType = .photoLibrary
-        self.present(imagePicker, animated: true, completion: nil)
+        
+        imagePicker.delegate = self
+        let actionSheet = UIAlertController(title: "Photo Source", message: "Choose a source", preferredStyle: .actionSheet)
+        
+        actionSheet.addAction(UIAlertAction(title: "Camera", style: .default, handler: { (action:UIAlertAction) in
+            if (UIImagePickerController.isSourceTypeAvailable(.camera))
+            {
+            self.imagePicker.sourceType = .camera
+            self.present(self.imagePicker, animated: true, completion: nil)
+            }
+            else{
+                print("camera not available")
+            }
+        }))
+        actionSheet.addAction(UIAlertAction(title: "Photo Library", style: .default, handler: { (action:UIAlertAction) in
+            self.imagePicker.sourceType = .photoLibrary
+            self.present(self.imagePicker, animated: true, completion: nil)
+        }))
+        actionSheet.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        //imagePicker.allowsEditing = true
+      //  imagePicker.sourceType = .photoLibrary
+        self.present(actionSheet, animated: true, completion: nil)
     }
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]){
-        if let image: UIImage = info[UIImagePickerController.InfoKey.editedImage] as? UIImage{
+        
+        if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage{
             self.itemList.append(image)
             
             self.imageCollection.reloadData()
         }
+        dismiss(animated: true, completion: nil)
+    }
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         dismiss(animated: true, completion: nil)
     }
     @IBOutlet weak var AddressLine1: UITextField!

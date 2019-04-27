@@ -41,6 +41,24 @@ class ViewController: UIViewController,UITableViewDelegate, UITableViewDataSourc
     
     }
     
+    @IBAction func shareBtn(_ sender: UIButton) {
+        
+        let cell = sender.superview?.superview?.superview as! UITableViewCell
+        let indexPath = itemTable.indexPath(for: cell)
+        let item =  saleItemList[(indexPath?.row)!]
+        let address = item.propertyAddress?.addressLine1
+        let newString = address?.replacingOccurrences(of: " ", with: "+")
+        print(newString!)
+        let message = "Hey checkout this item!"
+        let urlToShare = URL(string: "https://www.google.com/maps/place/\(newString!)")
+        print(urlToShare!)
+        let objectsToShare:NSArray = [message , urlToShare!]
+        
+        var activityController = UIActivityViewController(activityItems: objectsToShare as! [Any], applicationActivities: nil)
+        self.present(activityController, animated: true, completion: nil)
+        
+        
+    }
     
     var saleItemList = [SaleItem]()
     @IBOutlet weak var itemTable: UITableView!

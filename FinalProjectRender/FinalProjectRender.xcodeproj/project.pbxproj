@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		10F5E70E03F840ABAAB0B222 /* Pods_FinalProjectRender.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D97C60CCF12A90460DCF1368 /* Pods_FinalProjectRender.framework */; };
+		4332C6872274CA1F005820EB /* BaseImagePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4332C6862274CA1F005820EB /* BaseImagePickerViewController.swift */; };
 		4337689A226F7658004AC370 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43376899226F7658004AC370 /* RegisterViewController.swift */; };
 		4337689C226F7665004AC370 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4337689B226F7665004AC370 /* LoginViewController.swift */; };
 		43471EB82270219A006D04DA /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43471EB72270219A006D04DA /* Util.swift */; };
@@ -65,6 +66,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4332C6862274CA1F005820EB /* BaseImagePickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseImagePickerViewController.swift; sourceTree = "<group>"; };
 		43376899226F7658004AC370 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		4337689B226F7665004AC370 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		43471EB72270219A006D04DA /* Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
@@ -169,6 +171,7 @@
 				43471ED522735A27006D04DA /* ViewItemDetailViewController.swift */,
 				43471ED72273D7B9006D04DA /* ViewImageCollectionViewCell.swift */,
 				43471EE32274C5FA006D04DA /* ComplaintsViewController.swift */,
+				4332C6862274CA1F005820EB /* BaseImagePickerViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -543,6 +546,7 @@
 				43471EC32270F867006D04DA /* Payment.swift in Sources */,
 				43471ED42272D26D006D04DA /* ItemListTableView2Cell.swift in Sources */,
 				43471ECD2272CB1B006D04DA /* PostSaleItemList.swift in Sources */,
+				4332C6872274CA1F005820EB /* BaseImagePickerViewController.swift in Sources */,
 				43471ED22272D19F006D04DA /* ItemListTableViewCell.swift in Sources */,
 				4337689A226F7658004AC370 /* RegisterViewController.swift in Sources */,
 				43471EDE22745820006D04DA /* Feedback.swift in Sources */,
