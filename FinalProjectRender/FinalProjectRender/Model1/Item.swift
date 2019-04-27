@@ -17,7 +17,7 @@ class Item{
     var itemCategory : String?
     var price: Double?
     var propertyAddress : Address?  = Address()
-    var itemPayments : [Payment]?
+    var itemPayments : Payment?
     var itemBooked: Bool?
     var description: String?
     var sellerName : String?
@@ -33,9 +33,8 @@ class Item{
         //let lsigned = (String(describing: self.leaseSigned!))
         let price = self.price
         print(self.itemImages!)
-        self.itemPayments = [Payment]()
         let isBooked = String(describing: false)
-        ref?.child(aid).setValue(["itemTitle":self.itemTitle, "isSold":soldis, "itemCategory":self.itemCategory!, "sellerName":self.sellerName!,"price":price!,"itemImages":self.itemImages!, "itemPayments":self.itemPayments,"itemBooked":isBooked, "description": self.description])
+        ref?.child(aid).setValue(["itemTitle":self.itemTitle, "isSold":soldis, "itemCategory":self.itemCategory!, "sellerName":self.sellerName!,"price":price!,"itemImages":self.itemImages!,"itemBooked":isBooked, "description": self.description])
         print((self.propertyAddress?.addressLine1)!)
             print((self.propertyAddress?.state)!)
             print((self.propertyAddress?.city)!)
@@ -95,25 +94,6 @@ class Item{
             print(snapshot.progress ?? "NO MORE PROGRESS")
         }
         
-        /*let metaData = StorageMetadata()
-        metaData.contentType = "image/jpg"
-        
-        storageRef.putData(imageData, metadata: metaData) { metaData, error in
-            if error == nil, metaData != nil {
-                storageRef.downloadURL { (url, error) in
-                    guard let error = error else {
-                     //   var pathString = url?.absoluteString
-                       // self.itemImages?.append(pathString!)
-                        return
-                    }
-                    // success!
-                }
-                // success!
-            } else {
-                // failed
-                completion(nil)
-            }
-        }*/
         self.saveToFirebase()
     }
     func saveImagetoFirebase() -> Bool{

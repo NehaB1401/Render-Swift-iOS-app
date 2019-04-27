@@ -10,12 +10,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FinalProjectRender/ViewController.swift"
-            timestampString = "577946415.297969"
+            timestampString = "578023989.6155519"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "31"
-            endingLineNumber = "31"
-            landmarkName = "getSideView(_:)"
+            startingLineNumber = "78"
+            endingLineNumber = "78"
+            landmarkName = "getHomeView(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -154,11 +154,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FinalProjectRender/Controllers/ItemDetailViewController.swift"
-            timestampString = "577955381.524285"
+            timestampString = "578018565.424301"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "293"
-            endingLineNumber = "293"
+            startingLineNumber = "296"
+            endingLineNumber = "296"
             landmarkName = "getProperties()"
             landmarkType = "7">
          </BreakpointContent>
@@ -170,11 +170,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FinalProjectRender/Controllers/ItemDetailViewController.swift"
-            timestampString = "577955381.524436"
+            timestampString = "578018565.424474"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "102"
-            endingLineNumber = "102"
+            startingLineNumber = "103"
+            endingLineNumber = "103"
             landmarkName = "imagePickerController(_:didFinishPickingMediaWithInfo:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -182,15 +182,15 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FinalProjectRender/Controllers/ItemDetailViewController.swift"
-            timestampString = "577955381.524586"
+            timestampString = "578018565.424589"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "53"
-            endingLineNumber = "53"
+            startingLineNumber = "54"
+            endingLineNumber = "54"
             landmarkName = "collectionView(_:cellForItemAt:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -202,11 +202,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FinalProjectRender/Controllers/ItemDetailViewController.swift"
-            timestampString = "577955381.5246609"
+            timestampString = "578018565.424668"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "111"
-            endingLineNumber = "111"
+            startingLineNumber = "114"
+            endingLineNumber = "114"
             landmarkName = "postListing(_:)"
             landmarkType = "7">
             <Locations>
@@ -246,15 +246,15 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FinalProjectRender/Model1/Item.swift"
-            timestampString = "577955381.52473"
+            timestampString = "578023989.61711"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "38"
-            endingLineNumber = "38"
+            startingLineNumber = "37"
+            endingLineNumber = "37"
             landmarkName = "saveToFirebase()"
             landmarkType = "7">
          </BreakpointContent>
@@ -266,61 +266,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FinalProjectRender/Model1/Item.swift"
-            timestampString = "577955381.524865"
+            timestampString = "578023989.617245"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "127"
-            endingLineNumber = "127"
+            startingLineNumber = "107"
+            endingLineNumber = "107"
             landmarkName = "saveImagetoFirebase()"
             landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "FinalProjectRender/Model1/Item.swift"
-            timestampString = "577955381.5249569"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "101"
-            endingLineNumber = "101"
-            landmarkName = "uploadProfileImage(_:completion:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "FinalProjectRender.Item.uploadProfileImage(_: __C.UIImage, completion: (Swift.Optional&lt;Foundation.URL&gt;) -&gt; ()) -&gt; ()"
-                  moduleName = "FinalProjectRender"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/swift/Documents/Render-Swift-iOS-app/FinalProjectRender/FinalProjectRender/Model1/Item.swift"
-                  timestampString = "577933826.467555"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "83"
-                  endingLineNumber = "83"
-                  offsetFromSymbolStart = "986">
-               </Location>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Optional&lt;__C.FIRStorageMetadata&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in FinalProjectRender.Item.uploadProfileImage(_: __C.UIImage, completion: (Swift.Optional&lt;Foundation.URL&gt;) -&gt; ()) -&gt; ()"
-                  moduleName = "FinalProjectRender"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/swift/Documents/Render-Swift-iOS-app/FinalProjectRender/FinalProjectRender/Model1/Item.swift"
-                  timestampString = "577933826.471141"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "84"
-                  endingLineNumber = "84"
-                  offsetFromSymbolStart = "57">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -346,11 +298,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FinalProjectRender/Model1/Item.swift"
-            timestampString = "577955381.525066"
+            timestampString = "578023989.61739"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "78"
-            endingLineNumber = "78"
+            startingLineNumber = "77"
+            endingLineNumber = "77"
             landmarkName = "uploadProfileImage(_:completion:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -362,11 +314,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FinalProjectRender/Model1/Item.swift"
-            timestampString = "577955381.5251319"
+            timestampString = "578023989.6174771"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "64"
-            endingLineNumber = "64"
+            startingLineNumber = "63"
+            endingLineNumber = "63"
             landmarkName = "handleItemList()"
             landmarkType = "7">
             <Locations>
@@ -378,11 +330,11 @@
                   moduleName = "FinalProjectRender"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/swift/Documents/Render-Swift-iOS-app/FinalProjectRender/FinalProjectRender/Model1/Item.swift"
-                  timestampString = "577955381.853204"
+                  timestampString = "578023989.867584"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "64"
-                  endingLineNumber = "64"
+                  startingLineNumber = "63"
+                  endingLineNumber = "63"
                   offsetFromSymbolStart = "514">
                </Location>
                <Location
@@ -393,11 +345,11 @@
                   moduleName = "FinalProjectRender"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/swift/Documents/Render-Swift-iOS-app/FinalProjectRender/FinalProjectRender/Model1/Item.swift"
-                  timestampString = "577955381.856807"
+                  timestampString = "578023989.869617"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "66"
-                  endingLineNumber = "66"
+                  startingLineNumber = "65"
+                  endingLineNumber = "65"
                   offsetFromSymbolStart = "37">
                </Location>
             </Locations>
@@ -410,11 +362,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FinalProjectRender/Model1/Item.swift"
-            timestampString = "577955381.525195"
+            timestampString = "578023989.617555"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "87"
-            endingLineNumber = "87"
+            startingLineNumber = "86"
+            endingLineNumber = "86"
             landmarkName = "uploadProfileImage(_:completion:)"
             landmarkType = "7">
             <Locations>
@@ -426,11 +378,11 @@
                   moduleName = "FinalProjectRender"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/swift/Documents/Render-Swift-iOS-app/FinalProjectRender/FinalProjectRender/Model1/Item.swift"
-                  timestampString = "577955381.865443"
+                  timestampString = "578023989.875578"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "87"
-                  endingLineNumber = "87"
+                  startingLineNumber = "86"
+                  endingLineNumber = "86"
                   offsetFromSymbolStart = "735">
                </Location>
                <Location
@@ -441,11 +393,11 @@
                   moduleName = "FinalProjectRender"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/swift/Documents/Render-Swift-iOS-app/FinalProjectRender/FinalProjectRender/Model1/Item.swift"
-                  timestampString = "577955381.8690521"
+                  timestampString = "578023989.878355"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "88"
-                  endingLineNumber = "88"
+                  startingLineNumber = "87"
+                  endingLineNumber = "87"
                   offsetFromSymbolStart = "42">
                </Location>
             </Locations>
@@ -458,11 +410,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FinalProjectRender/Model1/Item.swift"
-            timestampString = "577955381.525257"
+            timestampString = "578023989.617627"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "88"
-            endingLineNumber = "88"
+            startingLineNumber = "87"
+            endingLineNumber = "87"
             landmarkName = "uploadProfileImage(_:completion:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -474,7 +426,23 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FinalProjectRender/Controllers/ItemDetailViewController.swift"
-            timestampString = "577955381.525319"
+            timestampString = "578018565.425523"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "206"
+            endingLineNumber = "206"
+            landmarkName = "postListing(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FinalProjectRender/Controllers/ItemDetailViewController.swift"
+            timestampString = "578018565.425616"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "203"
@@ -490,27 +458,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FinalProjectRender/Controllers/ItemDetailViewController.swift"
-            timestampString = "577955381.525393"
+            timestampString = "578018565.425719"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "200"
-            endingLineNumber = "200"
-            landmarkName = "postListing(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "FinalProjectRender/Controllers/ItemDetailViewController.swift"
-            timestampString = "577955381.525456"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "246"
-            endingLineNumber = "246"
+            startingLineNumber = "249"
+            endingLineNumber = "249"
             landmarkName = "uploadImage()"
             landmarkType = "7">
          </BreakpointContent>
@@ -522,11 +474,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FinalProjectRender/Controllers/ItemDetailViewController.swift"
-            timestampString = "577955381.525514"
+            timestampString = "578018565.425817"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "251"
-            endingLineNumber = "251"
+            startingLineNumber = "254"
+            endingLineNumber = "254"
             landmarkName = "uploadImage()"
             landmarkType = "7">
          </BreakpointContent>
@@ -538,11 +490,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FinalProjectRender/Controllers/ItemDetailViewController.swift"
-            timestampString = "577955381.525581"
+            timestampString = "578018565.425916"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "201"
-            endingLineNumber = "201"
+            startingLineNumber = "204"
+            endingLineNumber = "204"
             landmarkName = "postListing(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -554,11 +506,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FinalProjectRender/Controllers/ItemListViewController.swift"
-            timestampString = "577955381.5256571"
+            timestampString = "578023989.61792"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "52"
-            endingLineNumber = "52"
+            startingLineNumber = "75"
+            endingLineNumber = "75"
             landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>
@@ -570,27 +522,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FinalProjectRender/Controllers/ItemListViewController.swift"
-            timestampString = "577955381.5261689"
+            timestampString = "578023989.61867"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "25"
-            endingLineNumber = "25"
-            landmarkName = "tableView(_:cellForRowAt:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "FinalProjectRender/Controllers/ItemListViewController.swift"
-            timestampString = "577955381.526492"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "51"
-            endingLineNumber = "51"
+            startingLineNumber = "74"
+            endingLineNumber = "74"
             landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>
@@ -602,7 +538,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FinalProjectRender/Modal/PostSaleItemList.swift"
-            timestampString = "577955381.526796"
+            timestampString = "578018003.340513"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "21"
@@ -618,7 +554,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FinalProjectRender/Modal/PostSaleItemList.swift"
-            timestampString = "577955381.526885"
+            timestampString = "578018003.340574"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "20"
@@ -634,7 +570,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FinalProjectRender/Modal/SaleItem.swift"
-            timestampString = "577955381.5269721"
+            timestampString = "578023989.619215"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "26"
@@ -650,11 +586,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FinalProjectRender/Controllers/ItemListViewController.swift"
-            timestampString = "577955381.52705"
+            timestampString = "578023989.6193039"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "32"
-            endingLineNumber = "32"
+            startingLineNumber = "47"
+            endingLineNumber = "47"
             landmarkName = "tableView(_:cellForRowAt:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -666,7 +602,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FinalProjectRender/Cells/ItemListTableView2Cell.swift"
-            timestampString = "577955381.52737"
+            timestampString = "577997740.212437"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "24"
@@ -682,12 +618,188 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FinalProjectRender/Cells/ItemListTableView2Cell.swift"
-            timestampString = "577955381.527452"
+            timestampString = "577997740.212487"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "25"
             endingLineNumber = "25"
             landmarkName = "useMember(item:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FinalProjectRender/Controllers/ItemListViewController.swift"
+            timestampString = "578023989.6199501"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "27"
+            endingLineNumber = "27"
+            landmarkName = "tableView(_:cellForRowAt:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FinalProjectRender/Controllers/ItemListViewController.swift"
+            timestampString = "578023989.6205"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "29"
+            endingLineNumber = "29"
+            landmarkName = "tableView(_:cellForRowAt:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FinalProjectRender/Controllers/ItemListViewController.swift"
+            timestampString = "578023989.620913"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "26"
+            endingLineNumber = "26"
+            landmarkName = "tableView(_:cellForRowAt:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FinalProjectRender/Controllers/ItemDetailViewController.swift"
+            timestampString = "578018565.426773"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "53"
+            endingLineNumber = "53"
+            landmarkName = "collectionView(_:cellForItemAt:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FinalProjectRender/Controllers/ImageCollectionViewCell.swift"
+            timestampString = "578023989.621346"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "14"
+            endingLineNumber = "14"
+            landmarkName = "useMember(item:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FinalProjectRender/Controllers/ImageCollectionViewCell.swift"
+            timestampString = "578023989.621406"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "19"
+            endingLineNumber = "19"
+            landmarkName = "useMember(item:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FinalProjectRender/Controllers/ItemListViewController.swift"
+            timestampString = "578023989.621455"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "99"
+            endingLineNumber = "99"
+            landmarkName = "tableView(_:didSelectRowAt:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FinalProjectRender/Controllers/ItemListViewController.swift"
+            timestampString = "578023989.621748"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "93"
+            endingLineNumber = "93"
+            landmarkName = "prepare(for:sender:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FinalProjectRender/Modal/SaleItem.swift"
+            timestampString = "578023989.622025"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "31"
+            endingLineNumber = "31"
+            landmarkName = "init(itemId:dict:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FinalProjectRender/Modal/SaleItem.swift"
+            timestampString = "578023989.622082"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "30"
+            endingLineNumber = "30"
+            landmarkName = "init(itemId:dict:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FinalProjectRender/Modal/SaleItem.swift"
+            timestampString = "578023989.622131"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "36"
+            endingLineNumber = "36"
+            landmarkName = "init(itemId:dict:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

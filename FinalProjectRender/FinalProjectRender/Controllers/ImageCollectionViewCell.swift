@@ -11,4 +11,16 @@ import UIKit
 class ImageCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var image: UIImageView!
+    func useMember(item:UIImage) {
+        // Round those corners
+        
+        // Fill in the data
+        
+                self.image.image = item
+        
+        
+        
+    }
+    
+   
 }

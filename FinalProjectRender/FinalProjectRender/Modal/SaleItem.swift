@@ -16,7 +16,7 @@ struct SaleItem{
     let itemCategory : String?
     let price: Double?
     var propertyAddress : Address?  = Address()
-    let itemPayments : [Payment]?
+    let itemPayments : Payment?
     let itemBooked: Bool?
     let description: String?
     let sellerName : String?
@@ -26,9 +26,9 @@ struct SaleItem{
         self.itemId = itemId
         guard let itemTitle = dict["itemTitle"] as? String,
          let isSold = dict["isSold"] as? String,
-         let itemCategory = dict["itemCategory"] as? String,
+        let itemCategory = dict["itemCategory"] as? String,
          let price = dict["price"] as? Double,
-        // let description = dict["propertyAddress"] as? Address,
+         let address = dict["propertyAddress"] as? [String:Any],
          //let itemPayments = dict["itemPayments"] as? [Payment],
          let itemBooked = dict["itemBooked"] as? String,
          let description = dict["description"] as? String,
@@ -38,7 +38,19 @@ struct SaleItem{
             return nil
         }
         let propertyAddress = Address()
-        let itemPayments = [Payment]()
+        guard let addLine1 = address["addressLine1"] as! String?,
+        let city = address["city"] as? String,
+        let latitude = address["latitude"] as? Double,
+        let longitude = address["longitude"] as? Double
+            else{
+                return nil
+        }
+        
+        propertyAddress.addressLine1 = addLine1
+        propertyAddress.city = city
+        propertyAddress.latitude = latitude
+        propertyAddress.longitude = longitude
+        let itemPayments = Payment()
         self.itemTitle = itemTitle
         self.isSold = Bool(isSold)
         self.itemCategory = itemCategory

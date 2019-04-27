@@ -1,5 +1,5 @@
 //
-//  ItemListTableViewCell.swift
+//  HomeTableViewCell.swift
 //  FinalProjectRender
 //
 //  Created by Swift on 4/26/19.
@@ -7,18 +7,17 @@
 //
 
 import UIKit
-
-import Firebase
 import FirebaseStorage
+import Firebase
 
-class ItemListTableViewCell: UITableViewCell {
+class HomeTableViewCell: UITableViewCell {
 
     let imageRef = Storage.storage().reference().child("images")
     
     @IBOutlet weak var itemImage: UIImageView!
-    @IBOutlet weak var itemTitle: UILabel!
-    @IBOutlet weak var itemPrice: UILabel!
     
+    @IBOutlet weak var itemPrice: UILabel!
+    @IBOutlet weak var itemTitle: UILabel!
     func useMember(item:SaleItem) {
         // Round those corners
         
@@ -45,7 +44,6 @@ class ItemListTableViewCell: UITableViewCell {
         
         
     }
-    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

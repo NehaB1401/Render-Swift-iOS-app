@@ -11,18 +11,33 @@ import Firebase
 
 class ItemListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    //var sellItemList : [Item]? = []
+    var rowIndex: Int = 0;
     
     @IBOutlet weak var tableView2: UITableView!
     
+    @IBOutlet weak var tableView: UITableView!
     var loggedInUserId = ""
     var saleItemList = [SaleItem]()
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return saleItemList.count
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "TableViewCell2")! as! ItemListTableView2Cell
+    func tableView(_ tableViewCell: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        print(indexPath.row)
+        
+        print(tableViewCell)
+       if ((!(indexPath.row % 2 == 0)) && ((tableViewCell == tableView2)))
+        {
+            let cell = tableViewCell.dequeueReusableCell(withIdentifier: "TableViewCell2") as! ItemListTableView2Cell
+            //   tableView.dequeueReusableCell(withIdentifier: "TableViewCell")! as! ItemListTableViewCell
+            var saleItem : SaleItem = saleItemList[indexPath.row]
+            
+            cell.useMember(item:saleItem)
+            return cell
+        }
+        if ((indexPath.row % 2 == 0) && ((tableViewCell == tableView)))
+        {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "TableViewCell1")! as! ItemListTableViewCell
         var saleItem : SaleItem = saleItemList[indexPath.row]
         //cell.aboutLabel.text = member.about!
         // cell.facebook = member.facebook!
@@ -30,8 +45,14 @@ class ItemListViewController: UIViewController, UITableViewDelegate, UITableView
         //cell.facebookImage.image = UIImage(named:member.imageName!)!
        // tableView.estimatedRowHeight = 250
         cell.useMember(item:saleItem)
-        return cell
+            return cell
+            
+        }
+        
+        return UITableViewCell()
+       
     }
+    
     
 
     @IBOutlet weak var navBar: UINavigationBar!
@@ -42,14 +63,17 @@ class ItemListViewController: UIViewController, UITableViewDelegate, UITableView
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableView2.rowHeight = 100.0
+        self.tableView.rowHeight = 100.0
         let itemsRef = Database.database().reference().child("items")
         
         itemsRef.observe(.value, with: { snapshot in
             
             print(snapshot)
-            
+            //self.tableView2.estimatedRowHeight = 20
+            self.tableView2.rowHeight = UITableView.automaticDimension
             guard let postSaleItems = PostSaleItemList(with: snapshot) else { return}
             self.saleItemList = postSaleItems.SaleItemList
+            self.tableView.reloadData()
             self.tableView2.reloadData()
             
         })
@@ -62,7 +86,21 @@ class ItemListViewController: UIViewController, UITableViewDelegate, UITableView
             let controller = segue.destination as! ItemDetailViewController
             controller.loggedInUserId = self.loggedInUserId
         }
+        if (segue.identifier == "ViewItemDetailSegue")
+        {
+            if let itemDetVC = segue.destination as? ViewItemDetailViewController
+            {
+                itemDetVC.itemId = self.saleItemList[rowIndex].itemId;
+            }
+        }
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        rowIndex = indexPath.row
+        self.performSegue(withIdentifier: "ViewItemDetailSegue", sender: nil)
+    }
+    
+    
 
     /*
     // MARK: - Navigation

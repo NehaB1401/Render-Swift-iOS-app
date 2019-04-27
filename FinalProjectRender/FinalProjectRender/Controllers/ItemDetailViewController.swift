@@ -50,7 +50,8 @@ class ItemDetailViewController: UIViewController, UICollectionViewDelegate, UICo
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = imageCollection.dequeueReusableCell(withReuseIdentifier: "imageCell", for: indexPath) as? ImageCollectionViewCell
-        cell?.image.image = UIImage(named: "register")
+        cell!.useMember(item:itemList[indexPath.row])
+       // cell?.image.image = UIImage(named: "register")
         return cell!
     }
     var category = "Misc";
@@ -100,6 +101,8 @@ class ItemDetailViewController: UIViewController, UICollectionViewDelegate, UICo
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]){
         if let image: UIImage = info[UIImagePickerController.InfoKey.editedImage] as? UIImage{
             self.itemList.append(image)
+            
+            self.imageCollection.reloadData()
         }
         dismiss(animated: true, completion: nil)
     }
