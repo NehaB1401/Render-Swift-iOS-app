@@ -29,6 +29,7 @@ class ItemListViewController: UIViewController, UITableViewDelegate, UITableView
     
     @IBOutlet weak var tableView: UITableView!
     var loggedInUserId = ""
+    var currentUserUID = ""
     var saleItemList = [SaleItem]()
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return saleItemList.count
@@ -77,13 +78,18 @@ class ItemListViewController: UIViewController, UITableViewDelegate, UITableView
         self.selfSignIn()
         self.tableView2.rowHeight = 100.0
         self.tableView.rowHeight = 100.0
+        
+        SideView.layer.shadowColor = UIColor.black.cgColor
+        SideView.layer.shadowOpacity = 0.7
+        SideView.layer.shadowOffset = CGSize(width:10 ,height:0)
+        
         let itemsRef = Database.database().reference().child("items")
         
         itemsRef.observe(.value, with: { snapshot in
             
             print(snapshot)
             //self.tableView2.estimatedRowHeight = 20
-            self.tableView2.rowHeight = UITableView.automaticDimension
+          //  self.tableView2.rowHeight = UITableView.automaticDimension
             guard let postSaleItems = PostSaleItemList(with: snapshot) else { return}
             self.saleItemList = postSaleItems.SaleItemList
             self.tableView.reloadData()
@@ -97,7 +103,7 @@ class ItemListViewController: UIViewController, UITableViewDelegate, UITableView
         // Pass the selected object to the new view controller.
         if segue.identifier == "CreatePost" {
             let controller = segue.destination as! ItemDetailViewController
-            controller.loggedInUserId = self.loggedInUserId
+            controller.loggedInUserId = self.currentUserUID
         }
         if segue.identifier == "SignOutSegue" {
             let controller = segue.destination as! LoginViewController
@@ -116,14 +122,30 @@ class ItemListViewController: UIViewController, UITableViewDelegate, UITableView
         rowIndex = indexPath.row
         self.performSegue(withIdentifier: "ViewItemDetailSegue", sender: nil)
     }
-    
-   
+  
+    @IBOutlet weak var SideView: UIView!
+    @IBAction func getSideView(_ sender: UIBarButtonItem) {
+        if SideView.isHidden {
+            SideView.isHidden = false
+        } else {
+            SideView.isHidden = true
+        }
+    }
+    @IBAction func getHomeView(_ sender: UIButton) {
+        if SideView.isHidden {
+            SideView.isHidden = false
+        } else {
+            SideView.isHidden = true
+        }
+    }
     
     func selfSignIn()
     {
         if Auth.auth().currentUser == nil {
           
             self.performSegue(withIdentifier: "SignOutSegue", sender: self)
+        }else{
+            currentUserUID = (Auth.auth().currentUser?.uid)!
         }
     }
 

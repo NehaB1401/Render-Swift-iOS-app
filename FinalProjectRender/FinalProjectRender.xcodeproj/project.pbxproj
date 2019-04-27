@@ -26,6 +26,9 @@
 		43471ED622735A27006D04DA /* ViewItemDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43471ED522735A27006D04DA /* ViewItemDetailViewController.swift */; };
 		43471ED82273D7B9006D04DA /* ViewImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43471ED72273D7B9006D04DA /* ViewImageCollectionViewCell.swift */; };
 		43471EDA2273DFBC006D04DA /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43471ED92273DFBC006D04DA /* HomeTableViewCell.swift */; };
+		43471EDC2274551D006D04DA /* FeedbackTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43471EDB2274551D006D04DA /* FeedbackTableViewCell.swift */; };
+		43471EDE22745820006D04DA /* Feedback.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43471EDD2274581F006D04DA /* Feedback.swift */; };
+		43471EE42274C5FA006D04DA /* ComplaintsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43471EE32274C5FA006D04DA /* ComplaintsViewController.swift */; };
 		4396CB3822700DD200DFA95C /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4396CB3722700DD200DFA95C /* AboutViewController.swift */; };
 		4396CB3A22700DDF00DFA95C /* FeedbackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4396CB3922700DDF00DFA95C /* FeedbackViewController.swift */; };
 		4396CB3C22700E1100DFA95C /* ItemListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4396CB3B22700E1100DFA95C /* ItemListViewController.swift */; };
@@ -80,6 +83,9 @@
 		43471ED522735A27006D04DA /* ViewItemDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewItemDetailViewController.swift; sourceTree = "<group>"; };
 		43471ED72273D7B9006D04DA /* ViewImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewImageCollectionViewCell.swift; sourceTree = "<group>"; };
 		43471ED92273DFBC006D04DA /* HomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
+		43471EDB2274551D006D04DA /* FeedbackTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackTableViewCell.swift; sourceTree = "<group>"; };
+		43471EDD2274581F006D04DA /* Feedback.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Feedback.swift; path = FinalProjectRender/Model1/Feedback.swift; sourceTree = SOURCE_ROOT; };
+		43471EE32274C5FA006D04DA /* ComplaintsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplaintsViewController.swift; sourceTree = "<group>"; };
 		4396CB3722700DD200DFA95C /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		4396CB3922700DDF00DFA95C /* FeedbackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackViewController.swift; sourceTree = "<group>"; };
 		4396CB3B22700E1100DFA95C /* ItemListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemListViewController.swift; sourceTree = "<group>"; };
@@ -162,6 +168,7 @@
 				43471EC822715D7D006D04DA /* ImageCollectionViewCell.swift */,
 				43471ED522735A27006D04DA /* ViewItemDetailViewController.swift */,
 				43471ED72273D7B9006D04DA /* ViewImageCollectionViewCell.swift */,
+				43471EE32274C5FA006D04DA /* ComplaintsViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -177,6 +184,7 @@
 		43471EB92270E59D006D04DA /* Modal */ = {
 			isa = PBXGroup;
 			children = (
+				43471EDD2274581F006D04DA /* Feedback.swift */,
 				43471ECA2272B306006D04DA /* Member.swift */,
 				43471EC42270FA0C006D04DA /* MaintenanceRequest.swift */,
 				43471EC22270F867006D04DA /* Payment.swift */,
@@ -196,6 +204,7 @@
 				43471ED12272D19F006D04DA /* ItemListTableViewCell.swift */,
 				43471ED32272D26D006D04DA /* ItemListTableView2Cell.swift */,
 				43471ED92273DFBC006D04DA /* HomeTableViewCell.swift */,
+				43471EDB2274551D006D04DA /* FeedbackTableViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -530,11 +539,13 @@
 				4396CB3E22700ECC00DFA95C /* ItemDetailViewController.swift in Sources */,
 				4396CB3A22700DDF00DFA95C /* FeedbackViewController.swift in Sources */,
 				43471ECF2272CBD7006D04DA /* SaleItem.swift in Sources */,
+				43471EE42274C5FA006D04DA /* ComplaintsViewController.swift in Sources */,
 				43471EC32270F867006D04DA /* Payment.swift in Sources */,
 				43471ED42272D26D006D04DA /* ItemListTableView2Cell.swift in Sources */,
 				43471ECD2272CB1B006D04DA /* PostSaleItemList.swift in Sources */,
 				43471ED22272D19F006D04DA /* ItemListTableViewCell.swift in Sources */,
 				4337689A226F7658004AC370 /* RegisterViewController.swift in Sources */,
+				43471EDE22745820006D04DA /* Feedback.swift in Sources */,
 				43471EDA2273DFBC006D04DA /* HomeTableViewCell.swift in Sources */,
 				43DB8219226C0BC9007A5567 /* ViewController.swift in Sources */,
 				43471EC12270E5CE006D04DA /* Address.swift in Sources */,
@@ -546,6 +557,7 @@
 				43471ED622735A27006D04DA /* ViewItemDetailViewController.swift in Sources */,
 				43471ED82273D7B9006D04DA /* ViewImageCollectionViewCell.swift in Sources */,
 				4396CB4022700F0200DFA95C /* SellerListViewController.swift in Sources */,
+				43471EDC2274551D006D04DA /* FeedbackTableViewCell.swift in Sources */,
 				43DB8217226C0BC9007A5567 /* AppDelegate.swift in Sources */,
 				43471EC02270E5CE006D04DA /* Buyer.swift in Sources */,
 				43471EC52270FA0C006D04DA /* MaintenanceRequest.swift in Sources */,

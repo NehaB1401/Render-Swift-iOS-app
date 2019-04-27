@@ -37,7 +37,7 @@ extension String {
 
 extension String {
     var isDouble: Bool{
-        return (Double(self) != nil && Double(self)! > 0)
+        return (Double(self) != nil && Double(self)! > -0.1)
     }
 }
 

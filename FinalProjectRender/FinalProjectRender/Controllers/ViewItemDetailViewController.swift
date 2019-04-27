@@ -57,8 +57,8 @@ class ViewItemDetailViewController: UIViewController,CLLocationManagerDelegate,M
     var saleItemList = [SaleItem]()
     var sItem: Item = Item()
     var locationManager : CLLocationManager?
-    @IBOutlet weak var titleTxt: UITextField!
     @IBOutlet weak var descTxt: UITextView!
+    @IBOutlet weak var titleTxt: UITextField!
     
     @IBOutlet weak var priceTxt: UITextField!
     
@@ -67,6 +67,7 @@ class ViewItemDetailViewController: UIViewController,CLLocationManagerDelegate,M
     @IBOutlet weak var imageCollectionView: UICollectionView!
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var categoryTxt: UILabel!
+    @IBOutlet weak var freeLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
         let itemsRef = Database.database().reference().child("items")
@@ -99,7 +100,18 @@ class ViewItemDetailViewController: UIViewController,CLLocationManagerDelegate,M
         //print(movie);
        titleTxt.text = si.itemTitle
         descTxt.text = si.description
-        priceTxt.text = String(format:"%f",si.price!)
+        if((si.price?.isZero)!)
+      {
+        freeLabel.isHidden = false
+        }
+      else {
+        freeLabel.isHidden = true
+            
+            priceTxt.text = String(format:"%f",si.price!)
+        }
+      //  if(priceTxt.text == "0.0" || priceTxt.text == "0")
+       
+       
         categoryTxt.text = si.itemCategory
         
         mapView.register(MKMarkerAnnotationView.self, forAnnotationViewWithReuseIdentifier: MKMapViewDefaultAnnotationViewReuseIdentifier)

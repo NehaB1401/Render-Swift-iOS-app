@@ -273,6 +273,55 @@ class RegisterViewController: UIViewController, UIPickerViewDataSource, UIPicker
         // Do any additional setup after loading the view.
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        UIView.animate(withDuration: 1.5, delay: 0.5,
+                       usingSpringWithDamping: 0.3,
+                       initialSpringVelocity: 0.5,
+                       options: [], animations: {
+                        self.emailTxt.center.x -= self.view.bounds.width
+                        self.passTxt.center.x -= self.view.bounds.width
+                        self.verPassTxt.center.x += self.view.bounds.width
+                        self.usernameTxt.center.x -= self.view.bounds.width
+                     
+                        self.phoneTxt.center.x += self.view.bounds.width
+                        
+                        if(self.emailTxt.center.x != self.view.center.x){
+                            self.emailTxt.center.x = self.view.center.x
+                        }
+                        if(self.passTxt.center.x != self.view.center.x){
+                            self.passTxt.center.x = self.view.center.x
+                        }
+                        if(self.verPassTxt.center.x != self.view.center.x){
+                            self.verPassTxt.center.x = self.view.center.x
+                        }
+                        if(self.usernameTxt.center.x != self.view.center.x){
+                            self.usernameTxt.center.x = self.view.center.x
+                        }
+                        /*if(self.cityTxt.center.x != self.view.center.x){
+                            self.cityTxt.center.x = self.view.center.x
+                        }
+                        /*
+                        if(self.addressLine2TextField.center.x != self.view.center.x){
+                            self.addressLine2TextField.center.x = self.view.center.x
+                        }*/
+                        if(self.streetTxt.center.x != self.view.center.x){
+                            self.streetTxt.center.x = self.view.center.x
+                        }*/
+                        if(self.phoneTxt.center.x != self.view.center.x){
+                            self.phoneTxt.center.x = self.view.center.x
+                        }
+                        /*
+                        if(self.zipTxt.center.x != self.view.center.x){
+                            self.zipTxt.center.x = self.view.center.x
+                        }
+                        if(self.stateTxt.center.x != self.view.center.x){
+                            self.stateTxt.center.x = self.view.center.x
+                        }*/
+                        
+                        self.view.layoutIfNeeded()
+                        
+        }, completion: nil)
+    }
 
     /*
     // MARK: - Navigation

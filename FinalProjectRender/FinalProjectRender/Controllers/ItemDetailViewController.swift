@@ -32,6 +32,7 @@ extension String {
     
     
 }
+
 class ItemDetailViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource,UIPickerViewDataSource, UIPickerViewDelegate,UINavigationControllerDelegate, UIImagePickerControllerDelegate {
     
     let imageRef = Storage.storage().reference().child("images")
@@ -83,6 +84,11 @@ class ItemDetailViewController: UIViewController, UICollectionViewDelegate, UICo
         self.present(alert, animated: true, completion: nil)
     }
    
+    func presentAlert(){
+        let alert = UIAlertController(title: "SUCCESS", message: "SUCCESSFULLY POSTED LISTING!!", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+    }
 
     @IBOutlet weak var imageCollection: UICollectionView!
 
@@ -91,6 +97,10 @@ class ItemDetailViewController: UIViewController, UICollectionViewDelegate, UICo
 
     @IBOutlet weak var priceTxt: UITextField!
     @IBAction func freeItem(_ sender: UISwitch) {
+        if (sender.isOn == true)
+        {
+            priceTxt.text = "0"
+        }
     }
     @IBOutlet weak var categoryScroll: UIPickerView!
     @IBAction func addImage(_ sender: UIButton) {
@@ -203,6 +213,7 @@ class ItemDetailViewController: UIViewController, UICollectionViewDelegate, UICo
                 self.uploadImage()
                 self.itemDetails.itemImages = self.imageNames
                 self.itemDetails.saveToFirebase()
+                  self.presentAlert()
                 self.getProperties()
                
             })
@@ -228,11 +239,7 @@ class ItemDetailViewController: UIViewController, UICollectionViewDelegate, UICo
     }
     */
     
-    func presentAlert(){
-        let alert = UIAlertController(title: "SUCCESS", message: "SUCCESSFULLY CREATED ITEM !!", preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-        self.present(alert, animated: true, completion: nil)
-    }
+
     let filename = "demo1.jpg"
     func uploadImage()
     {

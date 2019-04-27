@@ -11,7 +11,8 @@ import Firebase
 import FirebaseStorage
 import FBSDKLoginKit
 
-class ViewController: UIViewController,UITableViewDelegate, UITableViewDataSource, FBSDKLoginButtonDelegate  {
+class ViewController: UIViewController,UITableViewDelegate, UITableViewDataSource, FBSDKLoginButtonDelegate,UISearchBarDelegate  {
+    @IBOutlet weak var searchBar: UISearchBar!
     func loginButton(_ loginButton: FBSDKLoginButton!, didCompleteWith result: FBSDKLoginManagerLoginResult!, error: Error!) {
         if error != nil {
             print(error)
@@ -50,6 +51,9 @@ class ViewController: UIViewController,UITableViewDelegate, UITableViewDataSourc
     @IBOutlet weak var SideView: UIView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        SideView.layer.shadowColor = UIColor.black.cgColor
+        SideView.layer.shadowOpacity = 0.7
+        SideView.layer.shadowOffset = CGSize(width:15 ,height:0)
         
         let loginButton = FBSDKLoginButton()
         view.addSubview(loginButton)
@@ -78,6 +82,8 @@ class ViewController: UIViewController,UITableViewDelegate, UITableViewDataSourc
             self.itemTable.reloadData()
             
         })
+        
+      
     }
     
     func fetchProfile(){
