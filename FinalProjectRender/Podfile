@@ -11,6 +11,10 @@ target 'FinalProjectRender' do
 	pod 'Firebase/Database'
 	pod 'Firebase/Storage'
 	pod 'Firebase/Auth'
+	pod 'SwiftKeychainWrapper'
+	pod 'FBSDKCoreKit'
+	pod 'FBSDKShareKit'
+	pod 'FBSDKLoginKit'
 
   target 'FinalProjectRenderTests' do
     inherit! :search_paths

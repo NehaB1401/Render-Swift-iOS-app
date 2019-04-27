@@ -33,9 +33,21 @@ class Buyer:User{
     var itemsForSale : [Item]!
     var pathString: String?
     
+    
+   /* func createUser(withEmail email: String, password: String, username: String){
+        Auth.auth().createUser(withEmail: email, password: password) { (result, error) in
+            if let error = error
+            {
+                print("failed to sign up")
+                return
+            }
+            guard let uid = result?.user.uid else {return}
+        }
+        
+    }*/
+    
+    let ref: DatabaseReference? = Database.database().reference().child("users")
     func saveToFirebase() {
-        let ref: DatabaseReference?
-        ref = Database.database().reference().child("users")
         print(self.userName!)
         print(self.firstName!)
         print(self.lastName!)
@@ -43,33 +55,48 @@ class Buyer:User{
         print(self.role!)
         var role = self.role?.rawValue
         print(role!)
-        let userObject =
-            ["userId":self.userId!,
-             "firstName":self.firstName!,
-             "lastName":self.lastName!,
-             "requestsRaised":self.requestsRaised!,
-             "password":self.password!,
-             "itemList":self.itemList,
-             "allRequests":self.allRequests,
-             "role":self.role!.rawValue,
-             "phone":self.phone!] as [String:Any]
-        ref?.child(self.userName!).setValue(userObject)
+        self.createUser(withEmail: self.email!, password: self.password!, username: self.userName!)
         
-        ref?.child(self.userName!).child("address").setValue(["addressLine1":(self.address?.addressLine1!)!, "addressLine2":(self.address?.addressLine2!)!,"city":(self.address?.city!)!,"state":(self.address?.state!)!, "postalcode":(self.address?.postalCode!)!, "latitude": (self.address?.latitude)!, "longitude":(self.address?.longitude)!])
-        self.createUser()
     }
     
-    func createUser(){
-        Auth.auth().createUser(withEmail: self.email!, password: password!) { user, error in
-            if error == nil && user != nil {
-                print("User created!")
-                
-                
-            } else {
-                print("Error: \(error!.localizedDescription)")
+    func createUser(withEmail email: String, password: String, username: String) {
+        
+        Auth.auth().createUser(withEmail: email, password: password) { (result, error) in
+            
+            if let error = error {
+                print("Failed to sign user up with error: ", error.localizedDescription)
+                return
             }
+            
+            guard let uid = result?.user.uid else { return }
+            
+            let values = ["email": email, "username": username]
+            
+            Database.database().reference().child("users").child(uid).updateChildValues(values, withCompletionBlock: { (error, ref) in
+                if let error = error {
+                    print("Failed to update database values with error: ", error.localizedDescription)
+                    return
+                }
+                
+               
+            })
+            let userObject =
+                ["userId":self.userId!,
+                 "userName": self.userName,
+                 "firstName":self.firstName!,
+                 "lastName":self.lastName!,
+                 "requestsRaised":self.requestsRaised!,
+                 "password":self.password!,
+                 "itemList":self.itemList,
+                 "allRequests":self.allRequests,
+                 "role":self.role!.rawValue,
+                 "phone":self.phone!] as [String:Any]
+            Database.database().reference().child("users").child(uid).setValue(userObject)
+            
+            Database.database().reference().child("users").child(uid).child("address").setValue(["addressLine1":(self.address?.addressLine1!)!, "addressLine2":(self.address?.addressLine2!)!,"city":(self.address?.city!)!,"state":(self.address?.state!)!, "postalcode":(self.address?.postalCode!)!, "latitude": (self.address?.latitude)!, "longitude":(self.address?.longitude)!])
+            
+            
         }
-
+        
     }
-    
 }

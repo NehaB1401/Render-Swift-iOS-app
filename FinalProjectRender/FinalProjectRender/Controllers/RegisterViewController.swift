@@ -12,6 +12,7 @@ import Firebase
 import Photos
 import FirebaseDatabase
 import Foundation
+import FBSDKLoginKit
 
 class RegisterViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
@@ -42,7 +43,7 @@ class RegisterViewController: UIViewController, UIPickerViewDataSource, UIPicker
     }
     
     func presentAlert(){
-        let alert = UIAlertController(title: "SUCCESS", message: "SUCCESSFULLY REGISTERED PROPERTY MANAGER!!", preferredStyle: .alert)
+        let alert = UIAlertController(title: "SUCCESS", message: "SUCCESSFULLY REGISTERED USER!!", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
         self.present(alert, animated: true, completion: nil)
     }

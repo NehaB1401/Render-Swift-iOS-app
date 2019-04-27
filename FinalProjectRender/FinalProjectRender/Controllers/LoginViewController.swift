@@ -15,14 +15,14 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var usernameTxt: UITextField!
     @IBOutlet weak var passTxt: UITextField!
     @IBAction func loginBtn(_ sender: UIButton) {
-        var userName : String = usernameTxt.text!
+        var email : String = usernameTxt.text!
         let password : String = passTxt.text!
-        
-        userName = userName.replacingOccurrences(of: ".", with: ",")
+     /*
+      // email = email.replacingOccurrences(of: ".", with: ",")
         let ref: DatabaseReference?
         ref = Database.database().reference().child("users")
         var flag: Bool = true
-        ref?.child(userName).observeSingleEvent(of: .value, with: { (snapshot) in
+        ref?.child(email).observeSingleEvent(of: .value, with: { (snapshot) in
             // Get user value
             let value = snapshot.value as? NSDictionary
             
@@ -42,6 +42,7 @@ class LoginViewController: UIViewController {
                 
                 if(password==userpassword!){
                     self.userLoggedIn = userId!
+                    
                     self.performSegue(withIdentifier: "userHomeSegue", sender: self)
 
                 }else{
@@ -64,6 +65,10 @@ class LoginViewController: UIViewController {
             passTxt.shake()
             return
         }
+        
+       */
+        self.handleSignin(withEmail: email, password: password)
+        
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
@@ -89,6 +94,23 @@ class LoginViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    func handleSignin(withEmail email: String, password: String)
+    {
+        Auth.auth().signIn(withEmail: email, password: password) { (result, error) in
+            
+            if let error = error {
+                print("Failed to sign user in with error: ", error.localizedDescription)
+                return
+            }
+            
+            self.performSegue(withIdentifier: "userHomeSegue", sender: self)
+
+           
+        //    self.dismiss(animated: true, completion: nil)
+        }
+    }
+    
     let filename = "demo.jpg"
     func uploadImage()
     {

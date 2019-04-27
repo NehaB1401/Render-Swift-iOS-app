@@ -13,6 +13,18 @@ class ItemListViewController: UIViewController, UITableViewDelegate, UITableView
     
     var rowIndex: Int = 0;
     
+    @IBAction func signOut(_ sender: UIBarButtonItem) {
+        do {
+            try Auth.auth().signOut()
+             self.performSegue(withIdentifier: "SignOutSegue", sender: self)
+            
+            
+        } catch let error {
+            print("Failed to sign out with error..", error)
+        }
+    }
+    
+    
     @IBOutlet weak var tableView2: UITableView!
     
     @IBOutlet weak var tableView: UITableView!
@@ -62,6 +74,7 @@ class ItemListViewController: UIViewController, UITableViewDelegate, UITableView
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.selfSignIn()
         self.tableView2.rowHeight = 100.0
         self.tableView.rowHeight = 100.0
         let itemsRef = Database.database().reference().child("items")
@@ -86,6 +99,10 @@ class ItemListViewController: UIViewController, UITableViewDelegate, UITableView
             let controller = segue.destination as! ItemDetailViewController
             controller.loggedInUserId = self.loggedInUserId
         }
+        if segue.identifier == "SignOutSegue" {
+            let controller = segue.destination as! LoginViewController
+        }
+
         if (segue.identifier == "ViewItemDetailSegue")
         {
             if let itemDetVC = segue.destination as? ViewItemDetailViewController
@@ -100,7 +117,15 @@ class ItemListViewController: UIViewController, UITableViewDelegate, UITableView
         self.performSegue(withIdentifier: "ViewItemDetailSegue", sender: nil)
     }
     
+   
     
+    func selfSignIn()
+    {
+        if Auth.auth().currentUser == nil {
+          
+            self.performSegue(withIdentifier: "SignOutSegue", sender: self)
+        }
+    }
 
     /*
     // MARK: - Navigation

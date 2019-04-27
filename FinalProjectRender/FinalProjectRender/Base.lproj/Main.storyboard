@@ -167,7 +167,7 @@
                                                         <color key="titleColor" white="0.25" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </state>
                                                     <connections>
-                                                        <segue destination="6KI-aW-9q7" kind="show" id="zWn-kE-2lr"/>
+                                                        <segue destination="sAg-Gs-Dr7" kind="show" id="NDr-ut-uNE"/>
                                                     </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q0u-u7-Vxp" userLabel="Feedback">
@@ -608,6 +608,11 @@
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <state key="normal" image="Gmail-icon"/>
                                             </button>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sL1-UA-5ro">
+                                                <rect key="frame" x="127" y="545" width="51" height="50"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" image="facebook_icon"/>
+                                            </button>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6lg-eI-O1U">
                                                 <rect key="frame" x="213" y="373" width="96" height="105"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -800,7 +805,11 @@
                                                 <action selector="getSideView:" destination="BYZ-38-t0r" id="v6K-gw-Wbz"/>
                                             </connections>
                                         </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" title="Item" image="green filter" id="iZR-rc-KDb"/>
+                                        <barButtonItem key="rightBarButtonItem" title="Sign out" id="rg0-ae-cWf">
+                                            <connections>
+                                                <action selector="signOut:" destination="sAg-Gs-Dr7" id="SPV-Zc-KJa"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
@@ -926,6 +935,7 @@
                         <outlet property="tableView2" destination="C47-MW-vdr" id="1DD-Ss-eFG"/>
                         <segue destination="h2X-L4-i2e" kind="show" identifier="CreatePost" id="fme-pk-PkU"/>
                         <segue destination="n0L-rc-XQe" kind="show" identifier="ViewItemDetailSegue" id="T60-6m-Zk7"/>
+                        <segue destination="6KI-aW-9q7" kind="show" identifier="SignOutSegue" id="MdE-5k-cjJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XiF-Kz-oii" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1523,6 +1533,7 @@
     <resources>
         <image name="Gmail-icon" width="50" height="50"/>
         <image name="about_screen-1" width="848" height="565"/>
+        <image name="facebook_icon" width="51" height="50"/>
         <image name="green filter" width="56" height="50"/>
         <image name="home_menu" width="50" height="50"/>
         <image name="login_screen" width="800" height="800"/>
@@ -1534,6 +1545,7 @@
         <image name="star_chosen" width="11" height="10"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="NYF-RN-73H"/>
+        <segue reference="T60-6m-Zk7"/>
+        <segue reference="NDr-ut-uNE"/>
     </inferredMetricsTieBreakers>
 </document>

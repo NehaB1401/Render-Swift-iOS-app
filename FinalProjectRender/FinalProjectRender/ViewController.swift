@@ -9,8 +9,23 @@
 import UIKit
 import Firebase
 import FirebaseStorage
+import FBSDKLoginKit
 
-class ViewController: UIViewController,UITableViewDelegate, UITableViewDataSource  {
+class ViewController: UIViewController,UITableViewDelegate, UITableViewDataSource, FBSDKLoginButtonDelegate  {
+    func loginButton(_ loginButton: FBSDKLoginButton!, didCompleteWith result: FBSDKLoginManagerLoginResult!, error: Error!) {
+        if error != nil {
+            print(error)
+            return
+        }
+        
+        print("Successfully logged in with facebook...")
+        fetchProfile()
+    }
+    
+    func loginButtonDidLogOut(_ loginButton: FBSDKLoginButton!) {
+        print("Did log out of facebook")
+    }
+    
     var rowIndex: Int = 0;
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return saleItemList.count
@@ -29,11 +44,27 @@ class ViewController: UIViewController,UITableViewDelegate, UITableViewDataSourc
     var saleItemList = [SaleItem]()
     @IBOutlet weak var itemTable: UITableView!
     
+    @IBAction func signOut(_ sender: UIBarButtonItem) {
+    }
     @IBOutlet weak var MenuTitle: UITextField!
     @IBOutlet weak var SideView: UIView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        MenuTitle.backgroundColor = UIColor.clear;
+        
+        let loginButton = FBSDKLoginButton()
+        view.addSubview(loginButton)
+        //frame's are obselete, please use constraints instead because its 2016 after all
+        loginButton.frame = CGRect(x: 320, y: 65, width: view.frame.width - 345, height: 40)
+        
+        loginButton.delegate = self
+      //  selfSignIn()
+        
+       /* if let token = FBSDKAccessToken.current()
+        {
+            fetchProfile()
+        }*/
+        
+       // MenuTitle.backgroundColor = UIColor.clear;
         let itemsRef = Database.database().reference().child("items")
         
         self.itemTable.rowHeight = 180.0
@@ -48,6 +79,13 @@ class ViewController: UIViewController,UITableViewDelegate, UITableViewDataSourc
             
         })
     }
+    
+    func fetchProfile(){
+        
+        
+    }
+
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
